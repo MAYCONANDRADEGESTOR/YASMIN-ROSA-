@@ -71,18 +71,13 @@
         /* Banner Provocativo & Profile */
         .banner {
             width: 100%;
-            height: 180px; /* Banner mais alto para chamar atenção */
+            height: 180px;
             position: relative;
-            /* 
-               SUBSTITUA O LINK ABAIXO PELA IMAGEM DE CAPA MAIS PROVOCATIVA DA YASMIN.
-               Se a imagem estiver no seu computador (ex: capa.jpg), mude para url('capa.jpg');
-            */
             background-image: url('https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');
             background-size: cover;
             background-position: center 25%;
         }
 
-        /* Efeito de degradê para mesclar a capa com o fundo do site */
         .banner::after {
             content: '';
             position: absolute;
@@ -94,7 +89,7 @@
         .profile-section {
             padding: 0 20px;
             position: relative;
-            margin-top: -60px; /* Sobe a foto um pouco mais para cima da capa */
+            margin-top: -60px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -212,7 +207,6 @@
         .locked-bg {
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            /* IMAGEM COM BORRÃO LEVE (10%) */
             background: url('3d85e2cf-9f18-4fc8-b50e-1d83072bf6be.jpg');
             background-size: cover;
             background-position: center;
@@ -263,23 +257,22 @@
             letter-spacing: 0.5px;
         }
 
+        /* NOVA LISTA CENTRALIZADA E PSICOLÓGICA */
         .benefits-list {
             list-style: none;
             background: #111;
             border: 1px solid var(--border);
             border-radius: 12px;
-            padding: 16px;
+            padding: 20px 15px;
             margin-bottom: 22px;
         }
 
         .benefits-list li {
-            font-size: 13px;
-            color: #ddd;
             display: flex;
+            flex-direction: column; /* Coloca o emoji em cima do texto */
             align-items: center;
-            gap: 10px;
-            margin-bottom: 12px;
-            line-height: 1.4;
+            text-align: center; /* Centraliza todo o texto */
+            margin-bottom: 20px;
         }
 
         .benefits-list li:last-child {
@@ -287,8 +280,24 @@
         }
 
         .benefits-list li span {
-            color: var(--primary);
-            font-size: 16px;
+            font-size: 24px;
+            margin-bottom: 8px;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+        }
+
+        .benefits-list li strong {
+            color: #fff;
+            font-size: 14px;
+            font-weight: 800;
+            margin-bottom: 4px;
+            display: block;
+        }
+
+        .benefits-list li p {
+            color: #aaa;
+            font-size: 12px;
+            line-height: 1.4;
+            font-weight: 500;
         }
 
         .form-group {
@@ -330,7 +339,6 @@
             cursor: pointer;
             text-decoration: none;
             text-align: center;
-            /* Nova animação que faz o botão inchar e desinchar */
             animation: super-pulse-button 1.8s infinite; 
             transition: background 0.3s;
             line-height: 1.4;
@@ -341,26 +349,15 @@
         }
 
         @keyframes super-pulse-button {
-            0% { 
-                box-shadow: 0 0 0 0 var(--btn-green-glow); 
-                transform: scale(1); 
-            }
-            50% { 
-                transform: scale(1.04); /* Aumenta 4% de tamanho */
-            }
-            70% { 
-                box-shadow: 0 0 0 18px rgba(0, 200, 83, 0); 
-                transform: scale(1); 
-            }
-            100% { 
-                box-shadow: 0 0 0 0 rgba(0, 200, 83, 0); 
-                transform: scale(1); 
-            }
+            0% { box-shadow: 0 0 0 0 var(--btn-green-glow); transform: scale(1); }
+            50% { transform: scale(1.04); }
+            70% { box-shadow: 0 0 0 18px rgba(0, 200, 83, 0); transform: scale(1); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 200, 83, 0); transform: scale(1); }
         }
 
         /* Pop-up Inline (Abaixo do Botão) */
         .notification-container {
-            margin-top: 25px; /* Espaço maior para o botão respirar ao pulsar */
+            margin-top: 25px; 
             min-height: 65px; 
         }
 
@@ -458,7 +455,6 @@
         <!-- Profile Header -->
         <div class="profile-section">
             <div class="profile-img-box">
-                <!-- MANTENHA A SUA FOTO AQUI -->
                 <img src="YASMIN.jpg" alt="Yasmin Rosinha">
                 <div class="status-dot"></div>
             </div>
@@ -498,12 +494,34 @@
         <div class="action-area">
             
             <div class="benefits-title">O QUE VOCÊ VAI RECEBER IMEDIATAMENTE:</div>
+            
+            <!-- LISTA PSICOLÓGICA E 100% CENTRALIZADA -->
             <ul class="benefits-list">
-                <li><span>🔥</span> Fotos exclusivas da buce... rosinha sem censura</li>
-                <li><span>✍️</span> Fotos com o seu nome escrito à mão no corpo dela</li>
-                <li><span>📹</span> Vídeos e chamadas íntimas daquele jeito</li>
-                <li><span>🎙️</span> Áudios provocantes e ligações personalizadas</li>
-                <li><span>📲</span> Acesso vitalício ao WhatsApp privado</li>
+                <li>
+                    <span>🔥</span> 
+                    <strong>O meu álbum secreto totalmente sem censura</strong>
+                    <p>Tudo aquilo que você sempre quis ver, liberado no seu número.</p>
+                </li>
+                <li>
+                    <span>😈</span> 
+                    <strong>Mídia exclusiva com seu nome no meu corpo</strong>
+                    <p>Pra você ter a prova real de que eu fiz pensando só em você.</p>
+                </li>
+                <li>
+                    <span>📹</span> 
+                    <strong>Meus vídeos caseiros mais quentes e íntimos</strong>
+                    <p>O tipo de conteúdo viciante que você não acha na internet.</p>
+                </li>
+                <li>
+                    <span>🎙️</span> 
+                    <strong>Áudios provocantes de tirar o fôlego</strong>
+                    <p>Coloque o fone de ouvido, feche os olhos e imagine a gente.</p>
+                </li>
+                <li>
+                    <span>📲</span> 
+                    <strong>Acesso direto ao meu WhatsApp Pessoal</strong>
+                    <p>Onde a gente vai poder trocar segredos toda madrugada.</p>
+                </li>
             </ul>
 
             <div class="form-group">
@@ -546,7 +564,6 @@
         function dispararPixelEValidar(event) {
             const zap = document.getElementById('whatsapp').value;
             
-            // Validação simples
             if(zap.replace(/\D/g, '').length < 10) {
                 event.preventDefault();
                 alert('Por favor, digite seu WhatsApp corretamente para que o sistema libere os conteúdos no seu número!');
@@ -554,7 +571,6 @@
                 return;
             }
 
-            // Disparo de Pixel - Evento de Compra (Purchase)
             if (typeof fbq === 'function') {
                 fbq('track', 'Purchase', {
                     value: 15.00,
