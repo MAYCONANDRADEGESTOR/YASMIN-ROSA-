@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yasmin Rosinha - Conteúdos Exclusivos no WhatsApp</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Perfil Privado - Yasmin Rosinha</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
     
     <!-- Meta Pixel Code -->
     <script>
@@ -17,7 +17,6 @@
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
     
-    // Substitua 'SEU_PIXEL_ID_AQUI' pelo ID numérico do seu Pixel do Facebook
     fbq('init', 'SEU_PIXEL_ID_AQUI'); 
     fbq('track', 'PageView');
     </script>
@@ -28,308 +27,422 @@
 
     <style>
         :root {
-            --bg-color: #080808;
-            --card-bg: #121212;
-            --accent-pink: #ff2a85;
-            --accent-orange: #ff5e00;
-            --text-main: #ffffff;
-            --text-muted: #b0b0b0;
-            --border-color: #262626;
+            --bg-body: #0a0a0a;
+            --bg-card: #141414;
+            --primary: #ff007f;
+            --primary-glow: rgba(255, 0, 127, 0.4);
+            --text-main: #f3f3f3;
+            --text-muted: #888888;
+            --border: #2a2a2a;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Inter', sans-serif;
         }
 
         body {
-            background-color: var(--bg-color);
+            background-color: var(--bg-body);
             color: var(--text-main);
             display: flex;
             justify-content: center;
-            align-items: center;
             min-height: 100vh;
-            padding: 20px 15px;
+            padding: 0; /* Removido padding lateral para tela cheia mobile */
             overflow-x: hidden;
-            text-align: center; /* Centraliza tudo por padrão */
         }
 
         .wrapper {
             width: 100%;
-            max-width: 440px;
-            margin: 0 auto;
+            max-width: 480px;
+            background: var(--bg-card);
+            min-height: 100vh;
+            position: relative;
+            box-shadow: 0 0 50px rgba(0,0,0,0.9);
         }
 
-        .card {
-            background: var(--card-bg);
-            border-radius: 24px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(255, 42, 133, 0.15);
-            padding: 28px 22px;
+        /* Banner & Profile */
+        .banner {
+            width: 100%;
+            height: 140px;
+            background: linear-gradient(45deg, #1a000d, #4d0026);
             position: relative;
+            background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect fill="rgba(255,0,127,0.1)" width="100" height="100"/></svg>'); /* Placeholder texturizado */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .profile-section {
+            padding: 0 20px;
+            position: relative;
+            margin-top: -50px;
             display: flex;
             flex-direction: column;
-            align-items: center; /* Centraliza os elementos internos do card */
+            align-items: center;
+            text-align: center;
         }
 
-        /* Status Badge */
-        .badge-live {
-            background: rgba(255, 42, 133, 0.15);
-            color: var(--accent-pink);
-            border: 1px solid rgba(255, 42, 133, 0.4);
-            font-size: 11px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            padding: 6px 14px;
-            border-radius: 30px;
-            display: inline-block;
-            margin-bottom: 20px;
-        }
-
-        /* Profile Photo */
-        .profile-container {
+        .profile-img-box {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 4px solid var(--bg-card);
+            background: #222;
             position: relative;
-            width: 110px;
-            height: 110px;
-            margin: 0 auto 18px;
+            z-index: 2;
         }
 
-        .profile-container img {
+        .profile-img-box img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             border-radius: 50%;
-            border: 3px solid var(--accent-pink);
-            box-shadow: 0 0 20px rgba(255, 42, 133, 0.4);
         }
 
-        .verified-badge {
+        .status-dot {
             position: absolute;
-            bottom: 2px;
-            right: 2px;
-            background: var(--accent-pink);
-            color: #fff;
-            width: 24px;
-            height: 24px;
+            bottom: 5px;
+            right: 5px;
+            width: 18px;
+            height: 18px;
+            background-color: #00ff66;
+            border: 3px solid var(--bg-card);
             border-radius: 50%;
+            animation: pulse-green 2s infinite;
+        }
+
+        @keyframes pulse-green {
+            0% { box-shadow: 0 0 0 0 rgba(0, 255, 102, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(0, 255, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 255, 102, 0); }
+        }
+
+        .user-info {
+            margin-top: 10px;
+        }
+
+        .user-name {
+            font-size: 20px;
+            font-weight: 900;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 12px;
-            border: 2px solid var(--card-bg);
+            gap: 5px;
+            letter-spacing: -0.5px;
         }
 
-        /* Typography */
-        h1 {
-            font-size: 18px;
-            font-weight: 800;
-            line-height: 1.4;
-            margin-bottom: 12px;
-            color: var(--text-main);
+        .verified {
+            color: #00b4d8;
+            font-size: 16px;
         }
 
-        p.subtitle {
-            font-size: 13px;
+        .user-handle {
             color: var(--text-muted);
-            margin-bottom: 20px;
-            line-height: 1.5;
+            font-size: 14px;
+            margin-top: 2px;
         }
 
-        /* Benefits Area */
-        .benefits-box {
-            background: #171717;
-            border-radius: 14px;
-            padding: 16px;
-            margin-bottom: 20px;
+        /* Stats */
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 15px 0;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border);
             width: 100%;
-            text-align: left;
-            border: 1px solid #222;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .stat-val {
+            font-size: 16px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .stat-label {
+            font-size: 11px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Locked Post Tactic */
+        .locked-post {
+            background: #1c1c1c;
+            border: 1px solid #333;
+            border-radius: 12px;
+            margin: 10px 20px 20px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .locked-bg {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('https://images.unsplash.com/photo-1519699047748-de8e457a634e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'); /* Fundo genérico borrado */
+            background-size: cover;
+            filter: blur(15px) brightness(0.4);
+            z-index: 1;
+        }
+
+        .locked-content {
+            position: relative;
+            z-index: 2;
+            color: #fff;
+        }
+
+        .icon-lock {
+            font-size: 36px;
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px var(--primary);
+        }
+
+        .locked-title {
+            font-weight: 800;
+            font-size: 16px;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .locked-desc {
+            font-size: 12px;
+            color: #ccc;
+        }
+
+        /* Form & Checkout Action */
+        .action-area {
+            padding: 0 20px 30px;
         }
 
         .benefits-title {
-            font-size: 12px;
-            font-weight: 700;
-            color: var(--accent-pink);
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
             text-align: center;
+            font-size: 13px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 12px;
         }
 
         .benefits-list {
             list-style: none;
+            background: #111;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 20px;
         }
 
         .benefits-list li {
             font-size: 12px;
             color: #ddd;
-            margin-bottom: 8px;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
+            margin-bottom: 10px;
+            line-height: 1.4;
         }
 
         .benefits-list li:last-child {
             margin-bottom: 0;
         }
 
-        .benefits-list li::before {
-            content: "🔥";
-            font-size: 11px;
+        .benefits-list li span {
+            color: var(--primary);
+            font-size: 14px;
         }
 
-        /* Form Group */
         .form-group {
-            margin-bottom: 18px;
-            width: 100%;
-            text-align: left;
-        }
-
-        .form-group label {
-            display: block;
-            font-size: 12px;
-            font-weight: 600;
-            margin-bottom: 6px;
-            color: #ccc;
+            margin-bottom: 15px;
         }
 
         .form-group input {
             width: 100%;
-            padding: 14px;
+            padding: 16px;
             border-radius: 12px;
-            border: 2px solid #2a2a2a;
-            background: #171717;
+            border: 1px solid #333;
+            background: #0f0f0f;
             color: #fff;
             font-size: 15px;
             outline: none;
             text-align: center;
-            transition: all 0.3s ease;
+            transition: border 0.3s, box-shadow 0.3s;
         }
 
         .form-group input:focus {
-            border-color: var(--accent-pink);
-            box-shadow: 0 0 12px rgba(255, 42, 133, 0.25);
+            border-color: var(--primary);
+            box-shadow: 0 0 15px var(--primary-glow);
         }
 
-        /* Action Button */
         .btn-donate {
             display: block;
             width: 100%;
-            background: linear-gradient(135deg, var(--accent-pink) 0%, var(--accent-orange) 100%);
+            background: var(--primary);
             color: white;
-            font-size: 13px;
-            font-weight: 800;
+            font-size: 14px;
+            font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            padding: 16px 12px;
+            padding: 18px 12px;
             border-radius: 12px;
             border: none;
             cursor: pointer;
             text-decoration: none;
-            box-shadow: 0 6px 20px rgba(255, 42, 133, 0.4);
-            transition: transform 0.2s, box-shadow 0.2s;
             text-align: center;
+            animation: pulse-button 2.5s infinite;
+            transition: transform 0.2s;
         }
 
         .btn-donate:active {
-            transform: scale(0.98);
+            transform: scale(0.97);
         }
 
-        /* Pop-up de Prova Social Flutuante (Estilo Notificação) */
+        @keyframes pulse-button {
+            0% { box-shadow: 0 0 0 0 var(--primary-glow); }
+            70% { box-shadow: 0 0 0 15px rgba(255, 0, 127, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 0, 127, 0); }
+        }
+
+        /* Pop-up Flutuante Nativos */
         .popup-provas {
             position: fixed;
-            bottom: 20px;
-            left: 15px;
-            background: rgba(18, 18, 18, 0.95);
-            border: 1px solid var(--accent-pink);
-            border-radius: 12px;
-            padding: 10px 14px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.7), 0 0 10px rgba(255, 42, 133, 0.3);
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%) translateY(50px);
+            background: rgba(20, 20, 20, 0.98);
+            border-left: 4px solid var(--primary);
+            border-radius: 8px;
+            padding: 12px 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             z-index: 999;
-            max-width: 300px;
-            text-align: left;
+            width: 90%;
+            max-width: 380px;
             opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.4s ease, transform 0.4s ease;
+            transition: opacity 0.3s ease, transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             pointer-events: none;
         }
 
         .popup-provas.show {
             opacity: 1;
-            transform: translateY(0);
+            transform: translateX(-50%) translateY(0);
         }
 
         .popup-icon {
-            font-size: 20px;
+            font-size: 22px;
+            background: #2a2a2a;
+            width: 40px; height: 40px;
+            display: flex; align-items: center; justify-content: center;
+            border-radius: 50%;
         }
 
         .popup-text {
-            font-size: 11px;
-            color: #ccc;
-            line-height: 1.3;
+            display: flex;
+            flex-direction: column;
         }
 
         .popup-text strong {
             color: #fff;
-            display: block;
+            font-size: 13px;
+            font-weight: 700;
         }
 
         .popup-text span {
-            color: #00ff66;
-            font-weight: bold;
+            font-size: 11px;
+            margin-top: 2px;
         }
     </style>
 </head>
 <body>
 
     <div class="wrapper">
-        <div class="card">
-            
-            <div class="badge-live">⚡ ACESSO VIP NO WHATSAPP</div>
+        
+        <!-- Fake Banner -->
+        <div class="banner"></div>
 
-            <div class="profile-container">
+        <!-- Profile Header -->
+        <div class="profile-section">
+            <div class="profile-img-box">
                 <img src="YASMIN.jpg" alt="Yasmin Rosinha">
-                <div class="verified-badge">✓</div>
+                <div class="status-dot"></div>
+            </div>
+            
+            <div class="user-info">
+                <div class="user-name">Yasmin Rosinha <span class="verified">✔</span></div>
+                <div class="user-handle">@yasminrosinha</div>
             </div>
 
-            <h1>FAÇA UMA DOAÇÃO PARA MIM DE QUALQUER VALOR E RECEBA MEUS CONTEÚDOS DIRETO NO SEU WHATSAPP</h1>
-            <p class="subtitle">Contribua com qualquer valor e destrave o meu acesso direto, materiais exclusivos e surpresas inéditas.</p>
-
-            <div class="benefits-box">
-                <div class="benefits-title">O que você vai receber:</div>
-                <ul class="benefits-list">
-                    <li>Fotos exclusivas com o seu nome escrito à mão</li>
-                    <li>Chamada de vídeo minha daquele jeito</li>
-                    <li>Áudios e ligações personalizadas</li>
-                    <li>Acesso direto ao meu WhatsApp privado</li>
-                </ul>
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <span class="stat-val">142</span>
+                    <span class="stat-label">Mídias</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-val">18.5k</span>
+                    <span class="stat-label">Curtidas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-val">4.8k</span>
+                    <span class="stat-label">Fãs VIP</span>
+                </div>
             </div>
+        </div>
+
+        <!-- Tática do Post Bloqueado (MUITO FORTE PARA CONVERSÃO) -->
+        <div class="locked-post">
+            <div class="locked-bg"></div>
+            <div class="locked-content">
+                <div class="icon-lock">🔒</div>
+                <div class="locked-title">12 Mídias Ocultas</div>
+                <div class="locked-desc">Faça uma doação para destravar este e outros conteúdos exclusivos direto no seu WhatsApp.</div>
+            </div>
+        </div>
+
+        <!-- Action Area -->
+        <div class="action-area">
+            
+            <div class="benefits-title">O QUE VOCÊ VAI RECEBER IMEDIATAMENTE:</div>
+            <ul class="benefits-list">
+                <li><span>🔥</span> Fotos exclusivas da buce... rosinha sem censura</li>
+                <li><span>✍️</span> Fotos com o seu nome escrito à mão no corpo dela</li>
+                <li><span>📹</span> Vídeos e chamadas íntimas daquele jeito</li>
+                <li><span>🎙️</span> Áudios provocantes e ligações personalizadas</li>
+                <li><span>📲</span> Acesso vitalício ao WhatsApp privado</li>
+            </ul>
 
             <div class="form-group">
-                <label for="whatsapp">Digite seu WhatsApp com DDD:</label>
-                <input type="text" id="whatsapp" placeholder="(99) 99999-9999" required>
+                <input type="tel" id="whatsapp" placeholder="Seu WhatsApp: (DDD) 99999-9999" required>
             </div>
 
-            <!-- Botão com rastreamento do Pixel do Facebook e Link -->
+            <!-- Botão de Compra -->
             <a href="https://link.syncpayments.com.br/pys6Av" id="btnFazerDoacao" class="btn-donate" onclick="dispararPixelEValidar(event)">
-                FAZER UMA DOAÇÃO PARA YASMIM DA BUCE... ROSINHA
+                FAZER DOAÇÃO E DESTRAVAR TUDO AGORA
             </a>
 
         </div>
     </div>
 
-    <!-- Pop-up Flutuante de Prova Social no canto da tela -->
+    <!-- Pop-up Flutuante Nativos (Bottom) -->
     <div id="popupProvas" class="popup-provas">
-        <div class="popup-icon">🔥</div>
+        <div id="popupIcon" class="popup-icon">🔥</div>
         <div class="popup-text">
-            <strong id="popupNome">Lucas M. (SP)</strong>
-            <span>Fez uma doação de R$ 30,00</span>
+            <strong id="popupTitle">Lucas M. (SP)</strong>
+            <span id="popupDesc">Destravou o acesso VIP</span>
         </div>
     </div>
 
@@ -337,14 +450,15 @@
         function dispararPixelEValidar(event) {
             const zap = document.getElementById('whatsapp').value;
             
-            if(zap.length < 10) {
+            // Validação simples
+            if(zap.replace(/\D/g, '').length < 10) {
                 event.preventDefault();
-                alert('Por favor, digite o número do seu WhatsApp corretamente para receber os conteúdos!');
+                alert('Por favor, digite seu WhatsApp corretamente para que o sistema libere as fotos no seu número!');
                 document.getElementById('whatsapp').focus();
                 return;
             }
 
-            // Dispara o Evento de Compra (Purchase) do Pixel do Facebook antes de redirecionar
+            // Disparo de Pixel
             if (typeof fbq === 'function') {
                 fbq('track', 'Purchase', {
                     value: 15.00,
@@ -353,33 +467,55 @@
             }
         }
 
-        // Sistema de Pop-up dinâmico simulando doações em tempo real
-        const nomes = ['Marcos V.', 'Diego R.', 'Thiago L.', 'Felipe C.', 'Rodrigo P.', 'Gustavo H.', 'João V.', 'Matheus B.', 'Carlos E.', 'Bruno K.'];
-        const valores = ['R$ 15,00', 'R$ 20,00', 'R$ 35,00', 'R$ 50,00', 'R$ 100,00'];
-        const estados = ['SP', 'RJ', 'MG', 'PR', 'SC', 'RS', 'BA', 'GO', 'DF'];
+        // Sistema de Pop-up Alternado (Doação vs Recebimento)
+        const doadores = [
+            { nome: "Marcos V. (SP)", desc: "Acabou de fazer uma doação", color: "#00ff66", icone: "💸" },
+            { nome: "Diego R. (RJ)", desc: "Destravou o conteúdo VIP", color: "#00b4d8", icone: "🔓" },
+            { nome: "Thiago L. (MG)", desc: "Fez uma doação de R$ 35,00", color: "#00ff66", icone: "💰" }
+        ];
+
+        const entregasZap = [
+            { nome: "Acesso Liberado 😈", desc: "Fotos exclusivas enviadas no WhatsApp", color: "#ff007f", icone: "📸" },
+            { nome: "WhatsApp Verificado", desc: "Áudio e vídeo da Yasmin entregues", color: "#ff007f", icone: "🔥" },
+            { nome: "Pacote Completo", desc: "Fotos com nome enviadas no Zap", color: "#ff007f", icone: "📲" }
+        ];
+
+        let alternador = true;
 
         function mostrarPopup() {
-            const nomeAleatorio = nomes[Math.floor(Math.random() * nomes.length)];
-            const valorAleatorio = valores[Math.floor(Math.random() * valores.length)];
-            const estadoAleatorio = estados[Math.floor(Math.random() * estados.length)];
-
-            document.getElementById('popupNome').innerText = `${nomeAleatorio} (${estadoAleatorio})`;
-            document.querySelector('.popup-text span').innerText = `Fez uma doação de ${valorAleatorio}`;
-
             const popup = document.getElementById('popupProvas');
+            const iconElem = document.getElementById('popupIcon');
+            const titleElem = document.getElementById('popupTitle');
+            const descElem = document.getElementById('popupDesc');
+
+            if (alternador) {
+                const item = doadores[Math.floor(Math.random() * doadores.length)];
+                iconElem.innerText = item.icone;
+                titleElem.innerText = item.nome;
+                descElem.innerText = item.desc;
+                descElem.style.color = item.color;
+                popup.style.borderLeftColor = item.color;
+            } else {
+                const item = entregasZap[Math.floor(Math.random() * entregasZap.length)];
+                iconElem.innerText = item.icone;
+                titleElem.innerText = item.nome;
+                descElem.innerText = item.desc;
+                descElem.style.color = item.color;
+                popup.style.borderLeftColor = item.color;
+            }
+
+            alternador = !alternador;
             popup.classList.add('show');
 
-            // Oculta após 4 segundos
             setTimeout(() => {
                 popup.classList.remove('show');
             }, 4000);
         }
 
-        // Inicia o primeiro pop-up após 3 segundos, e repete a cada 7 segundos
         setTimeout(() => {
             mostrarPopup();
-            setInterval(mostrarPopup, 7000);
-        }, 3000);
+            setInterval(mostrarPopup, 6500);
+        }, 2000);
     </script>
 </body>
 </html>
