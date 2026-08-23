@@ -5,6 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yasmin Rosinha - Conteúdos Exclusivos no WhatsApp</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=defaultConfig;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    
+    // Substitua 'SEU_PIXEL_ID_AQUI' pelo ID numérico do seu Pixel do Facebook
+    fbq('init', 'SEU_PIXEL_ID_AQUI'); 
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=SEU_PIXEL_ID_AQUI&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+
     <style>
         :root {
             --bg-color: #080808;
@@ -30,13 +51,15 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 15px;
+            padding: 20px 15px;
             overflow-x: hidden;
+            text-align: center; /* Centraliza tudo por padrão */
         }
 
         .wrapper {
             width: 100%;
             max-width: 440px;
+            margin: 0 auto;
         }
 
         .card {
@@ -44,9 +67,11 @@
             border-radius: 24px;
             border: 1px solid var(--border-color);
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(255, 42, 133, 0.15);
-            padding: 24px 20px;
-            text-align: center;
+            padding: 28px 22px;
             position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centraliza os elementos internos do card */
         }
 
         /* Status Badge */
@@ -119,6 +144,7 @@
             border-radius: 14px;
             padding: 16px;
             margin-bottom: 20px;
+            width: 100%;
             text-align: left;
             border: 1px solid #222;
         }
@@ -158,6 +184,7 @@
         /* Form Group */
         .form-group {
             margin-bottom: 18px;
+            width: 100%;
             text-align: left;
         }
 
@@ -178,6 +205,7 @@
             color: #fff;
             font-size: 15px;
             outline: none;
+            text-align: center;
             transition: all 0.3s ease;
         }
 
@@ -204,69 +232,55 @@
             box-shadow: 0 6px 20px rgba(255, 42, 133, 0.4);
             transition: transform 0.2s, box-shadow 0.2s;
             text-align: center;
-            margin-bottom: 16px;
         }
 
         .btn-donate:active {
             transform: scale(0.98);
         }
 
-        /* Pix Box */
-        .pix-box {
-            background: #171717;
-            border: 1px dashed rgba(255, 42, 133, 0.4);
-            padding: 12px;
+        /* Pop-up de Prova Social Flutuante (Estilo Notificação) */
+        .popup-provas {
+            position: fixed;
+            bottom: 20px;
+            left: 15px;
+            background: rgba(18, 18, 18, 0.95);
+            border: 1px solid var(--accent-pink);
             border-radius: 12px;
-            margin-bottom: 20px;
-            font-size: 11px;
-            color: #aaa;
-        }
-
-        .pix-box code {
-            display: block;
-            color: var(--accent-pink);
-            font-weight: 700;
-            margin-top: 4px;
-            font-size: 12px;
-            word-break: break-all;
-            font-family: monospace;
-        }
-
-        /* Social Proof Feed */
-        .social-proof {
-            background: #151515;
-            border-radius: 12px;
-            padding: 12px;
-            border: 1px solid #222;
-            text-align: left;
-        }
-
-        .social-proof h4 {
-            font-size: 11px;
-            color: #777;
-            margin-bottom: 8px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .feed-item {
-            font-size: 11px;
-            color: #bbb;
-            padding: 5px 0;
-            border-bottom: 1px solid #1f1f1f;
+            padding: 10px 14px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.7), 0 0 10px rgba(255, 42, 133, 0.3);
             display: flex;
-            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            z-index: 999;
+            max-width: 300px;
+            text-align: left;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+            pointer-events: none;
         }
 
-        .feed-item:last-child {
-            border-bottom: none;
+        .popup-provas.show {
+            opacity: 1;
+            transform: translateY(0);
         }
 
-        .feed-item strong {
+        .popup-icon {
+            font-size: 20px;
+        }
+
+        .popup-text {
+            font-size: 11px;
+            color: #ccc;
+            line-height: 1.3;
+        }
+
+        .popup-text strong {
             color: #fff;
+            display: block;
         }
 
-        .feed-item span.valor {
+        .popup-text span {
             color: #00ff66;
             font-weight: bold;
         }
@@ -280,7 +294,6 @@
             <div class="badge-live">⚡ ACESSO VIP NO WHATSAPP</div>
 
             <div class="profile-container">
-                <!-- Certifique-se de manter a imagem YASMIN.jpg na mesma pasta -->
                 <img src="YASMIN.jpg" alt="Yasmin Rosinha">
                 <div class="verified-badge">✓</div>
             </div>
@@ -303,66 +316,70 @@
                 <input type="text" id="whatsapp" placeholder="(99) 99999-9999" required>
             </div>
 
-            <a href="https://link.syncpayments.com.br/pys6Av" id="btnFazerDoacao" class="btn-donate" onclick="validarZap(event)">
+            <!-- Botão com rastreamento do Pixel do Facebook e Link -->
+            <a href="https://link.syncpayments.com.br/pys6Av" id="btnFazerDoacao" class="btn-donate" onclick="dispararPixelEValidar(event)">
                 FAZER UMA DOAÇÃO PARA YASMIM DA BUCE... ROSINHA
             </a>
-
-            <div class="pix-box">
-                Chave Pix Alternativa (Evento de Compra):
-                <code>1578287090632773</code>
-            </div>
-
-            <div class="social-proof">
-                <h4>🔥 Doações recentes:</h4>
-                <div id="feed-provas">
-                    <div class="feed-item">
-                        <span>Lucas M. (SP) doou</span>
-                        <span class="valor">R$ 30,00</span>
-                    </div>
-                    <div class="feed-item">
-                        <span>Rafael S. (RJ) doou</span>
-                        <span class="valor">R$ 50,00</span>
-                    </div>
-                    <div class="feed-item">
-                        <span>Bruno K. (MG) doou</span>
-                        <span class="valor">R$ 20,00</span>
-                    </div>
-                </div>
-            </div>
 
         </div>
     </div>
 
+    <!-- Pop-up Flutuante de Prova Social no canto da tela -->
+    <div id="popupProvas" class="popup-provas">
+        <div class="popup-icon">🔥</div>
+        <div class="popup-text">
+            <strong id="popupNome">Lucas M. (SP)</strong>
+            <span>Fez uma doação de R$ 30,00</span>
+        </div>
+    </div>
+
     <script>
-        function validarZap(event) {
+        function dispararPixelEValidar(event) {
             const zap = document.getElementById('whatsapp').value;
+            
             if(zap.length < 10) {
                 event.preventDefault();
                 alert('Por favor, digite o número do seu WhatsApp corretamente para receber os conteúdos!');
                 document.getElementById('whatsapp').focus();
+                return;
+            }
+
+            // Dispara o Evento de Compra (Purchase) do Pixel do Facebook antes de redirecionar
+            if (typeof fbq === 'function') {
+                fbq('track', 'Purchase', {
+                    value: 15.00,
+                    currency: 'BRL'
+                });
             }
         }
 
-        // Simulação dinâmica de provas sociais atualizada
-        const nomes = ['Marcos V.', 'Diego R.', 'Thiago L.', 'Felipe C.', 'Rodrigo P.', 'Gustavo H.', 'João V.', 'Matheus B.'];
+        // Sistema de Pop-up dinâmico simulando doações em tempo real
+        const nomes = ['Marcos V.', 'Diego R.', 'Thiago L.', 'Felipe C.', 'Rodrigo P.', 'Gustavo H.', 'João V.', 'Matheus B.', 'Carlos E.', 'Bruno K.'];
         const valores = ['R$ 15,00', 'R$ 20,00', 'R$ 35,00', 'R$ 50,00', 'R$ 100,00'];
-        const estados = ['SP', 'RJ', 'MG', 'PR', 'SC', 'RS', 'BA', 'GO'];
+        const estados = ['SP', 'RJ', 'MG', 'PR', 'SC', 'RS', 'BA', 'GO', 'DF'];
 
-        setInterval(() => {
+        function mostrarPopup() {
             const nomeAleatorio = nomes[Math.floor(Math.random() * nomes.length)];
             const valorAleatorio = valores[Math.floor(Math.random() * valores.length)];
             const estadoAleatorio = estados[Math.floor(Math.random() * estados.length)];
 
-            const feed = document.getElementById('feed-provas');
-            const novoItem = document.createElement('div');
-            novoItem.className = 'feed-item';
-            novoItem.innerHTML = `<span>${nomeAleatorio} (${estadoAleatorio}) doou</span> <span class="valor">${valorAleatorio}</span>`;
-            
-            feed.insertBefore(novoItem, feed.firstChild);
-            if(feed.children.length > 3) {
-                feed.removeChild(feed.lastChild);
-            }
-        }, 4000);
+            document.getElementById('popupNome').innerText = `${nomeAleatorio} (${estadoAleatorio})`;
+            document.querySelector('.popup-text span').innerText = `Fez uma doação de ${valorAleatorio}`;
+
+            const popup = document.getElementById('popupProvas');
+            popup.classList.add('show');
+
+            // Oculta após 4 segundos
+            setTimeout(() => {
+                popup.classList.remove('show');
+            }, 4000);
+        }
+
+        // Inicia o primeiro pop-up após 3 segundos, e repete a cada 7 segundos
+        setTimeout(() => {
+            mostrarPopup();
+            setInterval(mostrarPopup, 7000);
+        }, 3000);
     </script>
 </body>
 </html>
