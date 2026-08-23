@@ -6,7 +6,9 @@
     <title>Perfil Privado - Yasmin Rosinha</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
     
-    <!-- Meta Pixel Code -->
+    <!-- ========================================== -->
+    <!-- META PIXEL CODE (FACEBOOK ADS)             -->
+    <!-- ========================================== -->
     <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -17,13 +19,18 @@
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
     
+    // 1. INICIALIZA O PIXEL (Substitua pelo seu ID)
     fbq('init', 'SEU_PIXEL_ID_AQUI'); 
+    
+    // 2. DISPARA O EVENTO DE PAGEVIEW (Visualização de Página)
     fbq('track', 'PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=SEU_PIXEL_ID_AQUI&ev=PageView&noscript=1"
     /></noscript>
-    <!-- End Meta Pixel Code -->
+    <!-- ========================================== -->
+    <!-- END META PIXEL CODE                        -->
+    <!-- ========================================== -->
 
     <style>
         :root {
@@ -67,10 +74,10 @@
             flex-direction: column;
         }
 
-        /* Banner Ultra Compacto */
+        /* Banner Aumentado e Visível */
         .banner {
             width: 100%;
-            height: 110px; /* Reduzido para economizar espaço */
+            height: 150px; /* Aumentado para aparecer mais a imagem */
             position: relative;
             background-image: url('https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');
             background-size: cover;
@@ -81,14 +88,14 @@
             content: '';
             position: absolute;
             bottom: 0; left: 0; right: 0;
-            height: 40px;
+            height: 50px; /* Degradê um pouco maior para suavizar a transição */
             background: linear-gradient(to top, var(--bg-card), transparent);
         }
 
         .profile-section {
             padding: 0 15px;
             position: relative;
-            margin-top: -45px;
+            margin-top: -55px; /* Ajustado para o novo tamanho do banner */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -97,7 +104,7 @@
         }
 
         .profile-img-box {
-            width: 85px; /* Foto menor */
+            width: 85px; 
             height: 85px;
             border-radius: 50%;
             border: 3px solid var(--bg-card);
@@ -138,7 +145,7 @@
         }
 
         .user-name {
-            font-size: 18px; /* Fonte otimizada */
+            font-size: 18px; 
             font-weight: 900;
             display: flex;
             align-items: center;
@@ -202,7 +209,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 22px 15px; /* Bem menor */
+            padding: 22px 15px; 
             text-align: center;
         }
 
@@ -276,7 +283,7 @@
         }
 
         .benefits-list li span {
-            font-size: 18px; /* Emoji menor */
+            font-size: 18px; 
             margin-bottom: 2px;
             filter: drop-shadow(0 2px 2px rgba(0,0,0,0.8));
         }
@@ -439,7 +446,7 @@
 
     <div class="wrapper">
         
-        <!-- Banner Ultra Compacto -->
+        <!-- Banner Otimizado para Aparecer Mais -->
         <div class="banner"></div>
 
         <!-- Perfil Otimizado -->
@@ -541,6 +548,8 @@
                 document.getElementById('whatsapp').focus();
                 return;
             }
+            
+            // DISPARA O EVENTO DE COMPRA NO MOMENTO DO CLIQUE
             if (typeof fbq === 'function') {
                 fbq('track', 'Purchase', { value: 15.00, currency: 'BRL' });
             }
