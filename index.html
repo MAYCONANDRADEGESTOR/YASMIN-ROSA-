@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil Privado - Yasmin Rosinha</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
     
     <!-- Meta Pixel Code -->
     <script>
@@ -17,7 +17,6 @@
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
     
-    // Substitua 'SEU_PIXEL_ID_AQUI' pelo ID numérico do seu Pixel
     fbq('init', 'SEU_PIXEL_ID_AQUI'); 
     fbq('track', 'PageView');
     </script>
@@ -28,15 +27,15 @@
 
     <style>
         :root {
-            --bg-body: #0a0a0a;
-            --bg-card: #141414;
+            --bg-body: #050505;
+            --bg-card: #111111;
             --primary: #ff007f;
             --primary-glow: rgba(255, 0, 127, 0.4);
             --btn-green: #00c853; 
             --btn-green-glow: rgba(0, 200, 83, 0.5); 
             --text-main: #f3f3f3;
             --text-muted: #888888;
-            --border: #2a2a2a;
+            --border: #222222;
         }
 
         * {
@@ -59,37 +58,37 @@
 
         .wrapper {
             width: 100%;
-            max-width: 480px;
+            max-width: 440px;
             background: var(--bg-card);
             min-height: 100vh;
             position: relative;
-            box-shadow: 0 0 50px rgba(0,0,0,0.9);
+            box-shadow: 0 0 30px rgba(0,0,0,0.9);
             display: flex;
             flex-direction: column;
         }
 
-        /* Banner Provocativo & Profile */
+        /* Banner Ultra Compacto */
         .banner {
             width: 100%;
-            height: 180px;
+            height: 110px; /* Reduzido para economizar espaço */
             position: relative;
             background-image: url('https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');
             background-size: cover;
-            background-position: center 25%;
+            background-position: center 20%;
         }
 
         .banner::after {
             content: '';
             position: absolute;
             bottom: 0; left: 0; right: 0;
-            height: 70px;
+            height: 40px;
             background: linear-gradient(to top, var(--bg-card), transparent);
         }
 
         .profile-section {
-            padding: 0 20px;
+            padding: 0 15px;
             position: relative;
-            margin-top: -60px;
+            margin-top: -45px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -98,14 +97,14 @@
         }
 
         .profile-img-box {
-            width: 110px;
-            height: 110px;
+            width: 85px; /* Foto menor */
+            height: 85px;
             border-radius: 50%;
-            border: 4px solid var(--bg-card);
+            border: 3px solid var(--bg-card);
             background: #222;
             position: relative;
             z-index: 2;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.5);
         }
 
         .profile-img-box img {
@@ -117,54 +116,55 @@
 
         .status-dot {
             position: absolute;
-            bottom: 5px;
-            right: 8px;
-            width: 20px;
-            height: 20px;
+            bottom: 4px;
+            right: 4px;
+            width: 16px;
+            height: 16px;
             background-color: #00ff66;
-            border: 3px solid var(--bg-card);
+            border: 2px solid var(--bg-card);
             border-radius: 50%;
             animation: pulse-green-status 2s infinite;
         }
 
         @keyframes pulse-green-status {
             0% { box-shadow: 0 0 0 0 rgba(0, 255, 102, 0.4); }
-            70% { box-shadow: 0 0 0 10px rgba(0, 255, 102, 0); }
+            70% { box-shadow: 0 0 0 8px rgba(0, 255, 102, 0); }
             100% { box-shadow: 0 0 0 0 rgba(0, 255, 102, 0); }
         }
 
         .user-info {
-            margin-top: 10px;
+            margin-top: 5px;
+            line-height: 1.1;
         }
 
         .user-name {
-            font-size: 22px;
+            font-size: 18px; /* Fonte otimizada */
             font-weight: 900;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 5px;
+            gap: 4px;
             letter-spacing: -0.5px;
         }
 
         .verified {
             color: #00b4d8;
-            font-size: 18px;
+            font-size: 15px;
         }
 
         .user-handle {
             color: var(--text-muted);
-            font-size: 14px;
+            font-size: 12px;
             margin-top: 2px;
         }
 
-        /* Stats */
+        /* Stats Compactos */
         .stats-bar {
             display: flex;
             justify-content: center;
-            gap: 30px;
-            margin: 15px 0;
-            padding-bottom: 15px;
+            gap: 20px;
+            margin: 10px 0;
+            padding-bottom: 10px;
             border-bottom: 1px solid var(--border);
             width: 100%;
         }
@@ -173,34 +173,36 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            line-height: 1.1;
         }
 
         .stat-val {
-            font-size: 17px;
+            font-size: 15px;
             font-weight: 800;
             color: #fff;
         }
 
         .stat-label {
-            font-size: 11px;
+            font-size: 9px;
             color: var(--text-muted);
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
+            margin-top: 2px;
         }
 
-        /* Locked Post Tactic */
+        /* Post Oculto Super Focado */
         .locked-post {
-            background: #1c1c1c;
-            border: 1px solid #333;
-            border-radius: 12px;
-            margin: 10px 20px 20px;
+            background: #151515;
+            border: 1px solid #2a2a2a;
+            border-radius: 10px;
+            margin: 0 15px 12px;
             position: relative;
             overflow: hidden;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 40px 20px;
+            padding: 22px 15px; /* Bem menor */
             text-align: center;
         }
 
@@ -218,61 +220,55 @@
             position: relative;
             z-index: 2;
             color: #fff;
+            line-height: 1.2;
         }
 
         .icon-lock {
-            font-size: 38px;
-            margin-bottom: 10px;
-            text-shadow: 0 0 20px var(--primary);
+            font-size: 26px;
+            margin-bottom: 4px;
+            text-shadow: 0 0 15px var(--primary);
         }
 
         .locked-title {
-            font-weight: 800;
-            font-size: 18px;
+            font-weight: 900;
+            font-size: 15px;
             color: var(--primary);
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 5px;
+            letter-spacing: 0.5px;
+            margin-bottom: 3px;
         }
 
         .locked-desc {
-            font-size: 13px;
-            color: #ccc;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.8);
-            font-weight: 500;
+            font-size: 11px;
+            color: #ddd;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.9);
+            font-weight: 600;
         }
 
-        /* Form & Checkout Action */
+        /* Ação e Benefícios Compactados */
         .action-area {
-            padding: 0 20px 20px;
+            padding: 0 15px 15px;
             flex: 1;
+            display: flex;
+            flex-direction: column;
         }
 
-        .benefits-title {
-            text-align: center;
-            font-size: 14px;
-            font-weight: 800;
-            color: #fff;
-            margin-bottom: 15px;
-            letter-spacing: 0.5px;
-        }
-
-        /* NOVA LISTA CENTRALIZADA E PSICOLÓGICA */
         .benefits-list {
             list-style: none;
-            background: #111;
+            background: #0d0d0d;
             border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 20px 15px;
-            margin-bottom: 22px;
+            border-radius: 10px;
+            padding: 12px;
+            margin-bottom: 12px;
         }
 
         .benefits-list li {
             display: flex;
-            flex-direction: column; /* Coloca o emoji em cima do texto */
+            flex-direction: column;
             align-items: center;
-            text-align: center; /* Centraliza todo o texto */
-            margin-bottom: 20px;
+            text-align: center;
+            margin-bottom: 12px;
+            line-height: 1.2;
         }
 
         .benefits-list li:last-child {
@@ -280,68 +276,66 @@
         }
 
         .benefits-list li span {
-            font-size: 24px;
-            margin-bottom: 8px;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+            font-size: 18px; /* Emoji menor */
+            margin-bottom: 2px;
+            filter: drop-shadow(0 2px 2px rgba(0,0,0,0.8));
         }
 
         .benefits-list li strong {
             color: #fff;
-            font-size: 14px;
+            font-size: 12px;
             font-weight: 800;
-            margin-bottom: 4px;
-            display: block;
+            margin-bottom: 2px;
         }
 
         .benefits-list li p {
-            color: #aaa;
-            font-size: 12px;
-            line-height: 1.4;
+            color: #999;
+            font-size: 10px;
             font-weight: 500;
         }
 
+        /* Formulário e Botão Diretos */
         .form-group {
-            margin-bottom: 18px;
+            margin-bottom: 10px;
         }
 
         .form-group input {
             width: 100%;
-            padding: 18px;
-            border-radius: 12px;
-            border: 1px solid #444;
-            background: #0f0f0f;
+            padding: 14px;
+            border-radius: 10px;
+            border: 1px solid #333;
+            background: #0a0a0a;
             color: #fff;
-            font-size: 16px;
+            font-size: 14px;
             outline: none;
             text-align: center;
-            font-weight: 600;
+            font-weight: 700;
             transition: border 0.3s, box-shadow 0.3s;
         }
 
         .form-group input:focus {
             border-color: var(--primary);
-            box-shadow: 0 0 15px var(--primary-glow);
+            box-shadow: 0 0 10px var(--primary-glow);
         }
 
-        /* BOTÃO VERDE HIPER PULSANTE */
         .btn-donate {
             display: block;
             width: 100%;
             background: var(--btn-green); 
             color: white;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 900;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            padding: 20px 10px;
-            border-radius: 12px;
+            letter-spacing: 0.2px;
+            padding: 16px 8px;
+            border-radius: 10px;
             border: none;
             cursor: pointer;
             text-decoration: none;
             text-align: center;
             animation: super-pulse-button 1.8s infinite; 
             transition: background 0.3s;
-            line-height: 1.4;
+            line-height: 1.3;
         }
 
         .btn-donate:hover {
@@ -350,29 +344,29 @@
 
         @keyframes super-pulse-button {
             0% { box-shadow: 0 0 0 0 var(--btn-green-glow); transform: scale(1); }
-            50% { transform: scale(1.04); }
-            70% { box-shadow: 0 0 0 18px rgba(0, 200, 83, 0); transform: scale(1); }
+            50% { transform: scale(1.03); }
+            70% { box-shadow: 0 0 0 12px rgba(0, 200, 83, 0); transform: scale(1); }
             100% { box-shadow: 0 0 0 0 rgba(0, 200, 83, 0); transform: scale(1); }
         }
 
-        /* Pop-up Inline (Abaixo do Botão) */
+        /* Pop-up mais justinho e discreto */
         .notification-container {
-            margin-top: 25px; 
-            min-height: 65px; 
+            margin-top: 15px; 
+            min-height: 50px; 
         }
 
         .popup-provas {
-            background: rgba(26, 26, 26, 0.98);
-            border-left: 4px solid var(--primary);
-            border-radius: 8px;
-            padding: 12px 16px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            background: rgba(20, 20, 20, 0.98);
+            border-left: 3px solid var(--primary);
+            border-radius: 6px;
+            padding: 8px 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             width: 100%;
             opacity: 0;
-            transform: translateY(10px);
+            transform: translateY(5px);
             transition: opacity 0.3s ease, transform 0.4s ease;
         }
 
@@ -382,9 +376,9 @@
         }
 
         .popup-icon {
-            font-size: 20px;
-            background: #2a2a2a;
-            width: 38px; height: 38px;
+            font-size: 16px;
+            background: #222;
+            width: 32px; height: 32px;
             display: flex; align-items: center; justify-content: center;
             border-radius: 50%;
             flex-shrink: 0;
@@ -394,33 +388,33 @@
             display: flex;
             flex-direction: column;
             text-align: left;
+            line-height: 1.2;
         }
 
         .popup-text strong {
             color: #fff;
-            font-size: 12px;
-            font-weight: 700;
+            font-size: 11px;
+            font-weight: 800;
         }
 
         .popup-text span {
-            font-size: 11px;
-            margin-top: 2px;
+            font-size: 10px;
         }
 
-        /* Rodapé de Políticas */
+        /* Rodapé Micro */
         footer {
             margin-top: auto;
-            background: #0d0d0d;
-            border-top: 1px solid #1f1f1f;
-            padding: 20px;
+            background: #080808;
+            border-top: 1px solid #1a1a1a;
+            padding: 12px;
             text-align: center;
         }
 
         footer p {
-            font-size: 10px;
-            color: #555;
-            line-height: 1.5;
-            margin-bottom: 8px;
+            font-size: 9px;
+            color: #444;
+            line-height: 1.3;
+            margin-bottom: 5px;
         }
 
         footer p:last-child {
@@ -428,20 +422,16 @@
         }
 
         .footer-links {
-            margin-top: 10px;
+            margin-top: 6px;
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 12px;
         }
 
         .footer-links a {
-            color: #777;
+            color: #555;
             text-decoration: none;
-            font-size: 10px;
-        }
-
-        .footer-links a:hover {
-            color: var(--primary);
+            font-size: 9px;
         }
     </style>
 </head>
@@ -449,78 +439,64 @@
 
     <div class="wrapper">
         
-        <!-- Banner Provocativo -->
+        <!-- Banner Ultra Compacto -->
         <div class="banner"></div>
 
-        <!-- Profile Header -->
+        <!-- Perfil Otimizado -->
         <div class="profile-section">
             <div class="profile-img-box">
                 <img src="YASMIN.jpg" alt="Yasmin Rosinha">
                 <div class="status-dot"></div>
             </div>
-            
             <div class="user-info">
                 <div class="user-name">Yasmin Rosinha <span class="verified">✔</span></div>
                 <div class="user-handle">@yasminrosinha</div>
             </div>
-
             <div class="stats-bar">
-                <div class="stat-item">
-                    <span class="stat-val">142</span>
-                    <span class="stat-label">Mídias</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-val">18.5k</span>
-                    <span class="stat-label">Curtidas</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-val">4.8k</span>
-                    <span class="stat-label">Fãs VIP</span>
-                </div>
+                <div class="stat-item"><span class="stat-val">142</span><span class="stat-label">Mídias</span></div>
+                <div class="stat-item"><span class="stat-val">18.5k</span><span class="stat-label">Curtidas</span></div>
+                <div class="stat-item"><span class="stat-val">4.8k</span><span class="stat-label">Fãs VIP</span></div>
             </div>
         </div>
 
-        <!-- Tática do Post Bloqueado -->
+        <!-- Mídia Oculta Focada -->
         <div class="locked-post">
             <div class="locked-bg"></div>
             <div class="locked-content">
                 <div class="icon-lock">🔒</div>
                 <div class="locked-title">12 Mídias Ocultas</div>
-                <div class="locked-desc">Faça uma doação para destravar este e outros conteúdos exclusivos direto no seu WhatsApp.</div>
+                <div class="locked-desc">Faça uma doação para destravar este conteúdo exclusivo no seu WhatsApp.</div>
             </div>
         </div>
 
-        <!-- Action Area -->
+        <!-- Ação Compactada -->
         <div class="action-area">
             
-            <div class="benefits-title">O QUE VOCÊ VAI RECEBER IMEDIATAMENTE:</div>
-            
-            <!-- LISTA PSICOLÓGICA E 100% CENTRALIZADA -->
             <ul class="benefits-list">
                 <li>
                     <span>🔥</span> 
-                    <strong>O meu álbum secreto totalmente sem censura</strong>
-                    <p>Tudo aquilo que você sempre quis ver, liberado no seu número.</p>
+                    <strong>O meu álbum secreto sem censura</strong>
+                    <p>Tudo aquilo que você sempre quis ver liberado.</p>
                 </li>
                 <li>
                     <span>😈</span> 
-                    <strong>Mídia exclusiva com seu nome no meu corpo</strong>
-                    <p>Pra você ter a prova real de que eu fiz pensando só em você.</p>
+                    <strong>Mídia com seu nome no meu corpo</strong>
+                    <p>Pra provar que eu fiz pensando só em você.</p>
                 </li>
                 <li>
                     <span>📹</span> 
-                    <strong>Meus vídeos caseiros mais quentes e íntimos</strong>
-                    <p>O tipo de conteúdo viciante que você não acha na internet.</p>
+                    <strong>Vídeos caseiros quentes e íntimos</strong>
+                    <p>O conteúdo viciante que não acha na internet.</p>
                 </li>
                 <li>
                     <span>🎙️</span> 
                     <strong>Áudios provocantes de tirar o fôlego</strong>
-                    <p>Coloque o fone de ouvido, feche os olhos e imagine a gente.</p>
+                    <p>Feche os olhos e imagine a gente no sigilo.</p>
                 </li>
                 <li>
                     <span>📲</span> 
                     <strong>Acesso direto ao meu WhatsApp Pessoal</strong>
-                    <p>Onde a gente vai poder trocar segredos toda madrugada.</p>
+                    <p>Pra gente trocar segredos toda madrugada.</p>
                 </li>
             </ul>
 
@@ -528,12 +504,10 @@
                 <input type="tel" id="whatsapp" placeholder="Seu WhatsApp: (DDD) 99999-9999" required>
             </div>
 
-            <!-- Botão de Compra Hiper Pulsante -->
             <a href="https://link.syncpayments.com.br/pys6Av" id="btnFazerDoacao" class="btn-donate" onclick="dispararPixelEValidar(event)">
                 CLIQUE AQUI APENAS SE FOR FAZER A DOAÇÃO AGORA
             </a>
 
-            <!-- Pop-up Inline (Aparece fixo em baixo do botão) -->
             <div class="notification-container">
                 <div id="popupProvas" class="popup-provas">
                     <div id="popupIcon" class="popup-icon">🔥</div>
@@ -546,50 +520,42 @@
 
         </div>
 
-        <!-- Rodapé / Facebook Disclaimer -->
+        <!-- Rodapé Micro -->
         <footer>
-            <p>Este site não é afiliado ao Facebook ou a qualquer entidade do Facebook. Depois que você sair do Facebook, a responsabilidade não é deles e sim do nosso site. FACEBOOK é uma marca comercial da FACEBOOK, Inc.</p>
-            <p>Os conteúdos aqui disponibilizados são estritamente para maiores de 18 anos.</p>
-            
+            <p>Este site não é afiliado ao Facebook. A responsabilidade é exclusiva do nosso site. FACEBOOK é uma marca da FACEBOOK, Inc.</p>
+            <p>Conteúdos estritamente para maiores de 18 anos.</p>
             <div class="footer-links">
-                <a href="#">Termos de Uso</a>
-                <a href="#">Políticas de Privacidade</a>
+                <a href="#">Termos</a>
+                <a href="#">Privacidade</a>
             </div>
-            
-            <p style="margin-top: 15px;">&copy; 2026 Yasmin Rosinha. Todos os direitos reservados.</p>
+            <p style="margin-top: 8px;">&copy; 2026 Yasmin Rosinha.</p>
         </footer>
     </div>
 
     <script>
         function dispararPixelEValidar(event) {
             const zap = document.getElementById('whatsapp').value;
-            
             if(zap.replace(/\D/g, '').length < 10) {
                 event.preventDefault();
-                alert('Por favor, digite seu WhatsApp corretamente para que o sistema libere os conteúdos no seu número!');
+                alert('Por favor, digite seu WhatsApp corretamente para que o sistema libere os conteúdos!');
                 document.getElementById('whatsapp').focus();
                 return;
             }
-
             if (typeof fbq === 'function') {
-                fbq('track', 'Purchase', {
-                    value: 15.00,
-                    currency: 'BRL'
-                });
+                fbq('track', 'Purchase', { value: 15.00, currency: 'BRL' });
             }
         }
 
-        // Sistema de Notificações Abaixo do Botão
         const doadores = [
-            { nome: "Marcos V. (SP)", desc: "Acabou de fazer uma doação", color: "#00ff66", icone: "💸" },
-            { nome: "Diego R. (RJ)", desc: "Destravou o conteúdo VIP", color: "#00b4d8", icone: "🔓" },
-            { nome: "Thiago L. (MG)", desc: "Fez uma doação de R$ 35,00", color: "#00ff66", icone: "💰" }
+            { nome: "Marcos V. (SP)", desc: "Fez uma doação", color: "#00ff66", icone: "💸" },
+            { nome: "Diego R. (RJ)", desc: "Destravou o VIP", color: "#00b4d8", icone: "🔓" },
+            { nome: "Thiago L. (MG)", desc: "Doou R$ 35,00", color: "#00ff66", icone: "💰" }
         ];
 
         const entregasZap = [
-            { nome: "Acesso Liberado 😈", desc: "Fotos exclusivas enviadas no WhatsApp", color: "#ff007f", icone: "📸" },
-            { nome: "WhatsApp Verificado", desc: "Áudio e vídeo da Yasmin entregues", color: "#ff007f", icone: "🔥" },
-            { nome: "Pacote Completo", desc: "Fotos com nome enviadas no Zap", color: "#ff007f", icone: "📲" }
+            { nome: "Acesso Liberado 😈", desc: "Fotos no WhatsApp", color: "#ff007f", icone: "📸" },
+            { nome: "WhatsApp Verificado", desc: "Mídia entregue", color: "#ff007f", icone: "🔥" },
+            { nome: "Pacote Completo", desc: "Fotos enviadas", color: "#ff007f", icone: "📲" }
         ];
 
         let alternador = true;
@@ -600,34 +566,26 @@
             const titleElem = document.getElementById('popupTitle');
             const descElem = document.getElementById('popupDesc');
 
-            if (alternador) {
-                const item = doadores[Math.floor(Math.random() * doadores.length)];
-                iconElem.innerText = item.icone;
-                titleElem.innerText = item.nome;
-                descElem.innerText = item.desc;
-                descElem.style.color = item.color;
-                popup.style.borderLeftColor = item.color;
-            } else {
-                const item = entregasZap[Math.floor(Math.random() * entregasZap.length)];
-                iconElem.innerText = item.icone;
-                titleElem.innerText = item.nome;
-                descElem.innerText = item.desc;
-                descElem.style.color = item.color;
-                popup.style.borderLeftColor = item.color;
-            }
+            const item = alternador 
+                ? doadores[Math.floor(Math.random() * doadores.length)] 
+                : entregasZap[Math.floor(Math.random() * entregasZap.length)];
+
+            iconElem.innerText = item.icone;
+            titleElem.innerText = item.nome;
+            descElem.innerText = item.desc;
+            descElem.style.color = item.color;
+            popup.style.borderLeftColor = item.color;
 
             alternador = !alternador;
             popup.classList.add('show');
 
-            setTimeout(() => {
-                popup.classList.remove('show');
-            }, 4000);
+            setTimeout(() => { popup.classList.remove('show'); }, 3500);
         }
 
         setTimeout(() => {
             mostrarPopup();
-            setInterval(mostrarPopup, 6500);
-        }, 2000);
+            setInterval(mostrarPopup, 6000);
+        }, 1500);
     </script>
 </body>
 </html>
