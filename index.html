@@ -32,6 +32,8 @@
             --bg-card: #141414;
             --primary: #ff007f;
             --primary-glow: rgba(255, 0, 127, 0.4);
+            --btn-green: #00c853; 
+            --btn-green-glow: rgba(0, 200, 83, 0.4); 
             --text-main: #f3f3f3;
             --text-muted: #888888;
             --border: #2a2a2a;
@@ -113,10 +115,10 @@
             background-color: #00ff66;
             border: 3px solid var(--bg-card);
             border-radius: 50%;
-            animation: pulse-green 2s infinite;
+            animation: pulse-green-status 2s infinite;
         }
 
-        @keyframes pulse-green {
+        @keyframes pulse-green-status {
             0% { box-shadow: 0 0 0 0 rgba(0, 255, 102, 0.4); }
             70% { box-shadow: 0 0 0 10px rgba(0, 255, 102, 0); }
             100% { box-shadow: 0 0 0 0 rgba(0, 255, 102, 0); }
@@ -196,8 +198,10 @@
         .locked-bg {
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: url('https://images.unsplash.com/photo-1519699047748-de8e457a634e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');
+            /* IMAGEM SOLICITADA APLICADA AQUI */
+            background: url('3d85e2cf-9f18-4fc8-b50e-1d83072bf6be.jpg');
             background-size: cover;
+            background-position: center;
             filter: blur(15px) brightness(0.4);
             z-index: 1;
         }
@@ -295,7 +299,7 @@
         .btn-donate {
             display: block;
             width: 100%;
-            background: var(--primary);
+            background: var(--btn-green); 
             color: white;
             font-size: 12px;
             font-weight: 900;
@@ -307,8 +311,8 @@
             cursor: pointer;
             text-decoration: none;
             text-align: center;
-            animation: pulse-button 2.5s infinite;
-            transition: transform 0.2s;
+            animation: pulse-button-green 2.5s infinite; 
+            transition: transform 0.2s, background 0.3s;
             line-height: 1.4;
         }
 
@@ -316,16 +320,20 @@
             transform: scale(0.97);
         }
 
-        @keyframes pulse-button {
-            0% { box-shadow: 0 0 0 0 var(--primary-glow); }
-            70% { box-shadow: 0 0 0 15px rgba(255, 0, 127, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(255, 0, 127, 0); }
+        .btn-donate:hover {
+            background: #00e676; 
+        }
+
+        @keyframes pulse-button-green {
+            0% { box-shadow: 0 0 0 0 var(--btn-green-glow); }
+            70% { box-shadow: 0 0 0 15px rgba(0, 200, 83, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 200, 83, 0); }
         }
 
         /* Pop-up Inline (Abaixo do Botão) */
         .notification-container {
             margin-top: 15px;
-            min-height: 65px; /* Mantém o espaço para não empurrar a tela bruscamente */
+            min-height: 65px; 
         }
 
         .popup-provas {
@@ -478,7 +486,7 @@
                 CLIQUE AQUI APENAS SE FOR FAZER A DOAÇÃO AGORA
             </a>
 
-            <!-- Pop-up Inline (Aparece fixo em baixo do botão, sem sobrepor) -->
+            <!-- Pop-up Inline (Aparece fixo em baixo do botão) -->
             <div class="notification-container">
                 <div id="popupProvas" class="popup-provas">
                     <div id="popupIcon" class="popup-icon">🔥</div>
