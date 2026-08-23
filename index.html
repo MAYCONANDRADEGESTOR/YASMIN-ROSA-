@@ -198,11 +198,12 @@
         .locked-bg {
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            /* IMAGEM SOLICITADA APLICADA AQUI */
+            /* IMAGEM APLICADA AQUI COM BORRÃO LEVE (10%) */
             background: url('3d85e2cf-9f18-4fc8-b50e-1d83072bf6be.jpg');
             background-size: cover;
             background-position: center;
-            filter: blur(15px) brightness(0.4);
+            /* O blur(2px) dá aquele efeito leve de borrão de 10% */
+            filter: blur(2px) brightness(0.65); 
             z-index: 1;
         }
 
@@ -230,6 +231,7 @@
         .locked-desc {
             font-size: 12px;
             color: #ccc;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.8);
         }
 
         /* Form & Checkout Action */
