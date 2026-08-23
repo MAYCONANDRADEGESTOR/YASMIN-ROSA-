@@ -33,7 +33,7 @@
             --primary: #ff007f;
             --primary-glow: rgba(255, 0, 127, 0.4);
             --btn-green: #00c853; 
-            --btn-green-glow: rgba(0, 200, 83, 0.4); 
+            --btn-green-glow: rgba(0, 200, 83, 0.5); 
             --text-main: #f3f3f3;
             --text-muted: #888888;
             --border: #2a2a2a;
@@ -68,35 +68,49 @@
             flex-direction: column;
         }
 
-        /* Banner & Profile */
+        /* Banner Provocativo & Profile */
         .banner {
             width: 100%;
-            height: 140px;
-            background: linear-gradient(45deg, #1a000d, #4d0026);
+            height: 180px; /* Banner mais alto para chamar atenção */
             position: relative;
-            background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect fill="rgba(255,0,127,0.1)" width="100" height="100"/></svg>');
+            /* 
+               SUBSTITUA O LINK ABAIXO PELA IMAGEM DE CAPA MAIS PROVOCATIVA DA YASMIN.
+               Se a imagem estiver no seu computador (ex: capa.jpg), mude para url('capa.jpg');
+            */
+            background-image: url('https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');
             background-size: cover;
-            background-position: center;
+            background-position: center 25%;
+        }
+
+        /* Efeito de degradê para mesclar a capa com o fundo do site */
+        .banner::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 70px;
+            background: linear-gradient(to top, var(--bg-card), transparent);
         }
 
         .profile-section {
             padding: 0 20px;
             position: relative;
-            margin-top: -50px;
+            margin-top: -60px; /* Sobe a foto um pouco mais para cima da capa */
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
+            z-index: 5;
         }
 
         .profile-img-box {
-            width: 100px;
-            height: 100px;
+            width: 110px;
+            height: 110px;
             border-radius: 50%;
             border: 4px solid var(--bg-card);
             background: #222;
             position: relative;
             z-index: 2;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
         }
 
         .profile-img-box img {
@@ -109,9 +123,9 @@
         .status-dot {
             position: absolute;
             bottom: 5px;
-            right: 5px;
-            width: 18px;
-            height: 18px;
+            right: 8px;
+            width: 20px;
+            height: 20px;
             background-color: #00ff66;
             border: 3px solid var(--bg-card);
             border-radius: 50%;
@@ -129,7 +143,7 @@
         }
 
         .user-name {
-            font-size: 20px;
+            font-size: 22px;
             font-weight: 900;
             display: flex;
             align-items: center;
@@ -140,7 +154,7 @@
 
         .verified {
             color: #00b4d8;
-            font-size: 16px;
+            font-size: 18px;
         }
 
         .user-handle {
@@ -167,8 +181,8 @@
         }
 
         .stat-val {
-            font-size: 16px;
-            font-weight: 700;
+            font-size: 17px;
+            font-weight: 800;
             color: #fff;
         }
 
@@ -198,11 +212,10 @@
         .locked-bg {
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            /* IMAGEM APLICADA AQUI COM BORRÃO LEVE (10%) */
+            /* IMAGEM COM BORRÃO LEVE (10%) */
             background: url('3d85e2cf-9f18-4fc8-b50e-1d83072bf6be.jpg');
             background-size: cover;
             background-position: center;
-            /* O blur(2px) dá aquele efeito leve de borrão de 10% */
             filter: blur(2px) brightness(0.65); 
             z-index: 1;
         }
@@ -214,14 +227,14 @@
         }
 
         .icon-lock {
-            font-size: 36px;
+            font-size: 38px;
             margin-bottom: 10px;
             text-shadow: 0 0 20px var(--primary);
         }
 
         .locked-title {
             font-weight: 800;
-            font-size: 16px;
+            font-size: 18px;
             color: var(--primary);
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -229,9 +242,10 @@
         }
 
         .locked-desc {
-            font-size: 12px;
+            font-size: 13px;
             color: #ccc;
             text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+            font-weight: 500;
         }
 
         /* Form & Checkout Action */
@@ -242,10 +256,11 @@
 
         .benefits-title {
             text-align: center;
-            font-size: 13px;
-            font-weight: 700;
+            font-size: 14px;
+            font-weight: 800;
             color: #fff;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
+            letter-spacing: 0.5px;
         }
 
         .benefits-list {
@@ -253,17 +268,17 @@
             background: #111;
             border: 1px solid var(--border);
             border-radius: 12px;
-            padding: 15px;
-            margin-bottom: 20px;
+            padding: 16px;
+            margin-bottom: 22px;
         }
 
         .benefits-list li {
-            font-size: 12px;
+            font-size: 13px;
             color: #ddd;
             display: flex;
             align-items: center;
             gap: 10px;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             line-height: 1.4;
         }
 
@@ -273,23 +288,24 @@
 
         .benefits-list li span {
             color: var(--primary);
-            font-size: 14px;
+            font-size: 16px;
         }
 
         .form-group {
-            margin-bottom: 15px;
+            margin-bottom: 18px;
         }
 
         .form-group input {
             width: 100%;
-            padding: 16px;
+            padding: 18px;
             border-radius: 12px;
-            border: 1px solid #333;
+            border: 1px solid #444;
             background: #0f0f0f;
             color: #fff;
-            font-size: 15px;
+            font-size: 16px;
             outline: none;
             text-align: center;
+            font-weight: 600;
             transition: border 0.3s, box-shadow 0.3s;
         }
 
@@ -298,6 +314,7 @@
             box-shadow: 0 0 15px var(--primary-glow);
         }
 
+        /* BOTÃO VERDE HIPER PULSANTE */
         .btn-donate {
             display: block;
             width: 100%;
@@ -307,34 +324,43 @@
             font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            padding: 18px 10px;
+            padding: 20px 10px;
             border-radius: 12px;
             border: none;
             cursor: pointer;
             text-decoration: none;
             text-align: center;
-            animation: pulse-button-green 2.5s infinite; 
-            transition: transform 0.2s, background 0.3s;
+            /* Nova animação que faz o botão inchar e desinchar */
+            animation: super-pulse-button 1.8s infinite; 
+            transition: background 0.3s;
             line-height: 1.4;
-        }
-
-        .btn-donate:active {
-            transform: scale(0.97);
         }
 
         .btn-donate:hover {
             background: #00e676; 
         }
 
-        @keyframes pulse-button-green {
-            0% { box-shadow: 0 0 0 0 var(--btn-green-glow); }
-            70% { box-shadow: 0 0 0 15px rgba(0, 200, 83, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(0, 200, 83, 0); }
+        @keyframes super-pulse-button {
+            0% { 
+                box-shadow: 0 0 0 0 var(--btn-green-glow); 
+                transform: scale(1); 
+            }
+            50% { 
+                transform: scale(1.04); /* Aumenta 4% de tamanho */
+            }
+            70% { 
+                box-shadow: 0 0 0 18px rgba(0, 200, 83, 0); 
+                transform: scale(1); 
+            }
+            100% { 
+                box-shadow: 0 0 0 0 rgba(0, 200, 83, 0); 
+                transform: scale(1); 
+            }
         }
 
         /* Pop-up Inline (Abaixo do Botão) */
         .notification-container {
-            margin-top: 15px;
+            margin-top: 25px; /* Espaço maior para o botão respirar ao pulsar */
             min-height: 65px; 
         }
 
@@ -426,12 +452,13 @@
 
     <div class="wrapper">
         
-        <!-- Fake Banner -->
+        <!-- Banner Provocativo -->
         <div class="banner"></div>
 
         <!-- Profile Header -->
         <div class="profile-section">
             <div class="profile-img-box">
+                <!-- MANTENHA A SUA FOTO AQUI -->
                 <img src="YASMIN.jpg" alt="Yasmin Rosinha">
                 <div class="status-dot"></div>
             </div>
@@ -483,7 +510,7 @@
                 <input type="tel" id="whatsapp" placeholder="Seu WhatsApp: (DDD) 99999-9999" required>
             </div>
 
-            <!-- Botão de Compra com Filtro de Curiosos -->
+            <!-- Botão de Compra Hiper Pulsante -->
             <a href="https://link.syncpayments.com.br/pys6Av" id="btnFazerDoacao" class="btn-donate" onclick="dispararPixelEValidar(event)">
                 CLIQUE AQUI APENAS SE FOR FAZER A DOAÇÃO AGORA
             </a>
