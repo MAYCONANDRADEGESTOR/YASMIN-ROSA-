@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yasmin Rosinha - Conteúdos Exclusivos no WhatsApp</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #080808;
+            --card-bg: #121212;
+            --accent-pink: #ff2a85;
+            --accent-orange: #ff5e00;
+            --text-main: #ffffff;
+            --text-muted: #b0b0b0;
+            --border-color: #262626;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 15px;
+            overflow-x: hidden;
+        }
+
+        .wrapper {
+            width: 100%;
+            max-width: 440px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 24px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(255, 42, 133, 0.15);
+            padding: 24px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        /* Status Badge */
+        .badge-live {
+            background: rgba(255, 42, 133, 0.15);
+            color: var(--accent-pink);
+            border: 1px solid rgba(255, 42, 133, 0.4);
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 6px 14px;
+            border-radius: 30px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        /* Profile Photo */
+        .profile-container {
+            position: relative;
+            width: 110px;
+            height: 110px;
+            margin: 0 auto 18px;
+        }
+
+        .profile-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid var(--accent-pink);
+            box-shadow: 0 0 20px rgba(255, 42, 133, 0.4);
+        }
+
+        .verified-badge {
+            position: absolute;
+            bottom: 2px;
+            right: 2px;
+            background: var(--accent-pink);
+            color: #fff;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            border: 2px solid var(--card-bg);
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 18px;
+            font-weight: 800;
+            line-height: 1.4;
+            margin-bottom: 12px;
+            color: var(--text-main);
+        }
+
+        p.subtitle {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        /* Benefits Area */
+        .benefits-box {
+            background: #171717;
+            border-radius: 14px;
+            padding: 16px;
+            margin-bottom: 20px;
+            text-align: left;
+            border: 1px solid #222;
+        }
+
+        .benefits-title {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--accent-pink);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            text-align: center;
+        }
+
+        .benefits-list {
+            list-style: none;
+        }
+
+        .benefits-list li {
+            font-size: 12px;
+            color: #ddd;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .benefits-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .benefits-list li::before {
+            content: "🔥";
+            font-size: 11px;
+        }
+
+        /* Form Group */
+        .form-group {
+            margin-bottom: 18px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #ccc;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 14px;
+            border-radius: 12px;
+            border: 2px solid #2a2a2a;
+            background: #171717;
+            color: #fff;
+            font-size: 15px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus {
+            border-color: var(--accent-pink);
+            box-shadow: 0 0 12px rgba(255, 42, 133, 0.25);
+        }
+
+        /* Action Button */
+        .btn-donate {
+            display: block;
+            width: 100%;
+            background: linear-gradient(135deg, var(--accent-pink) 0%, var(--accent-orange) 100%);
+            color: white;
+            font-size: 13px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 16px 12px;
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 6px 20px rgba(255, 42, 133, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-align: center;
+            margin-bottom: 16px;
+        }
+
+        .btn-donate:active {
+            transform: scale(0.98);
+        }
+
+        /* Pix Box */
+        .pix-box {
+            background: #171717;
+            border: 1px dashed rgba(255, 42, 133, 0.4);
+            padding: 12px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            font-size: 11px;
+            color: #aaa;
+        }
+
+        .pix-box code {
+            display: block;
+            color: var(--accent-pink);
+            font-weight: 700;
+            margin-top: 4px;
+            font-size: 12px;
+            word-break: break-all;
+            font-family: monospace;
+        }
+
+        /* Social Proof Feed */
+        .social-proof {
+            background: #151515;
+            border-radius: 12px;
+            padding: 12px;
+            border: 1px solid #222;
+            text-align: left;
+        }
+
+        .social-proof h4 {
+            font-size: 11px;
+            color: #777;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .feed-item {
+            font-size: 11px;
+            color: #bbb;
+            padding: 5px 0;
+            border-bottom: 1px solid #1f1f1f;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .feed-item:last-child {
+            border-bottom: none;
+        }
+
+        .feed-item strong {
+            color: #fff;
+        }
+
+        .feed-item span.valor {
+            color: #00ff66;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="card">
+            
+            <div class="badge-live">⚡ ACESSO VIP NO WHATSAPP</div>
+
+            <div class="profile-container">
+                <!-- Certifique-se de manter a imagem YASMIN.jpg na mesma pasta -->
+                <img src="YASMIN.jpg" alt="Yasmin Rosinha">
+                <div class="verified-badge">✓</div>
+            </div>
+
+            <h1>FAÇA UMA DOAÇÃO PARA MIM DE QUALQUER VALOR E RECEBA MEUS CONTEÚDOS DIRETO NO SEU WHATSAPP</h1>
+            <p class="subtitle">Contribua com qualquer valor e destrave o meu acesso direto, materiais exclusivos e surpresas inéditas.</p>
+
+            <div class="benefits-box">
+                <div class="benefits-title">O que você vai receber:</div>
+                <ul class="benefits-list">
+                    <li>Fotos exclusivas com o seu nome escrito à mão</li>
+                    <li>Chamada de vídeo minha daquele jeito</li>
+                    <li>Áudios e ligações personalizadas</li>
+                    <li>Acesso direto ao meu WhatsApp privado</li>
+                </ul>
+            </div>
+
+            <div class="form-group">
+                <label for="whatsapp">Digite seu WhatsApp com DDD:</label>
+                <input type="text" id="whatsapp" placeholder="(99) 99999-9999" required>
+            </div>
+
+            <a href="https://link.syncpayments.com.br/pys6Av" id="btnFazerDoacao" class="btn-donate" onclick="validarZap(event)">
+                FAZER UMA DOAÇÃO PARA YASMIM DA BUCE... ROSINHA
+            </a>
+
+            <div class="pix-box">
+                Chave Pix Alternativa (Evento de Compra):
+                <code>1578287090632773</code>
+            </div>
+
+            <div class="social-proof">
+                <h4>🔥 Doações recentes:</h4>
+                <div id="feed-provas">
+                    <div class="feed-item">
+                        <span>Lucas M. (SP) doou</span>
+                        <span class="valor">R$ 30,00</span>
+                    </div>
+                    <div class="feed-item">
+                        <span>Rafael S. (RJ) doou</span>
+                        <span class="valor">R$ 50,00</span>
+                    </div>
+                    <div class="feed-item">
+                        <span>Bruno K. (MG) doou</span>
+                        <span class="valor">R$ 20,00</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function validarZap(event) {
+            const zap = document.getElementById('whatsapp').value;
+            if(zap.length < 10) {
+                event.preventDefault();
+                alert('Por favor, digite o número do seu WhatsApp corretamente para receber os conteúdos!');
+                document.getElementById('whatsapp').focus();
+            }
+        }
+
+        // Simulação dinâmica de provas sociais atualizada
+        const nomes = ['Marcos V.', 'Diego R.', 'Thiago L.', 'Felipe C.', 'Rodrigo P.', 'Gustavo H.', 'João V.', 'Matheus B.'];
+        const valores = ['R$ 15,00', 'R$ 20,00', 'R$ 35,00', 'R$ 50,00', 'R$ 100,00'];
+        const estados = ['SP', 'RJ', 'MG', 'PR', 'SC', 'RS', 'BA', 'GO'];
+
+        setInterval(() => {
+            const nomeAleatorio = nomes[Math.floor(Math.random() * nomes.length)];
+            const valorAleatorio = valores[Math.floor(Math.random() * valores.length)];
+            const estadoAleatorio = estados[Math.floor(Math.random() * estados.length)];
+
+            const feed = document.getElementById('feed-provas');
+            const novoItem = document.createElement('div');
+            novoItem.className = 'feed-item';
+            novoItem.innerHTML = `<span>${nomeAleatorio} (${estadoAleatorio}) doou</span> <span class="valor">${valorAleatorio}</span>`;
+            
+            feed.insertBefore(novoItem, feed.firstChild);
+            if(feed.children.length > 3) {
+                feed.removeChild(feed.lastChild);
+            }
+        }, 4000);
+    </script>
+</body>
+</html>
