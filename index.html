@@ -7,13 +7,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
     
     <!-- ========================================== -->
-    <!-- META PIXEL CODE (FACEBOOK ADS)             -->
+    <!-- META PIXEL CODE CORRIGIDO                  -->
     <!-- ========================================== -->
     <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
     n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=defaultConfig;n.loaded=!0;n.version='2.0';
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
     n.queue=[];t=b.createElement(e);t.async=!0;
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
@@ -401,20 +401,20 @@
                         customer: {
                             name: "Cliente VIP",
                             email: "zap" + zapValue + "@email.com",
-                            document: "00000000000" // Algumas APIs exigem o CPF, enviando um genérico por padrão
+                            document: "00000000000"
                         }
                     })
                 });
 
                 const dados = await resposta.json();
-                console.log("Retorno da Escama Black:", dados); // Veja isso no Console apertando F12 se o PIX não aparecer
+                console.log("Retorno da Escama Black:", dados); // IMPORTANTE: Olhe isso no F12 se o código não aparecer!
 
                 if (resposta.ok) {
                     // Oculta o botão de doação e exibe a tela do PIX
                     botao.style.display = 'none'; 
                     areaPix.style.display = 'block';
                     
-                    // Tratamento do QR Code (Adapte os nomes abaixo se a API devolver diferente)
+                    // Tratamento do QR Code
                     if(dados.qrcode_base64 || dados.qr_code) {
                         qrCodeImg.src = dados.qrcode_base64 || dados.qr_code;
                         qrCodeImg.style.display = 'block';
@@ -434,7 +434,7 @@
 
             } catch (error) {
                 console.error("Erro na requisição (CORS ou rede):", error);
-                alert("O navegador bloqueou a requisição direta para a API (Erro de CORS) ou houve falha de rede.");
+                alert("O servidor da Escama Black bloqueou a requisição direta pelo navegador (Erro de CORS) ou houve falha de rede. Verifique o console (F12).");
                 restaurarBotao(botao);
             }
         }
