@@ -2,9 +2,9 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Perfil Privado - Yasmin Rosinha</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
     
     <!-- ========================================== -->
     <!-- META PIXEL CODE (FACEBOOK ADS)             -->
@@ -19,17 +19,12 @@
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
     
-    // 1. INICIALIZA O PIXEL COM O SEU ID OFICIAL
     fbq('init', '1578287090632773'); 
-    
-    // 2. DISPARA O EVENTO DE PAGEVIEW (Visualização de Página)
     fbq('track', 'PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=1578287090632773&ev=PageView&noscript=1"
     /></noscript>
-    <!-- ========================================== -->
-    <!-- END META PIXEL CODE                        -->
     <!-- ========================================== -->
 
     <style>
@@ -39,10 +34,11 @@
             --primary: #ff007f;
             --primary-glow: rgba(255, 0, 127, 0.4);
             --btn-green: #00c853; 
+            --btn-green-hover: #00e676;
             --btn-green-glow: rgba(0, 200, 83, 0.5); 
-            --text-main: #f3f3f3;
-            --text-muted: #888888;
-            --border: #222222;
+            --text-main: #ffffff;
+            --text-muted: #9e9e9e;
+            --border: #2a2a2a;
         }
 
         * {
@@ -50,6 +46,7 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
         }
 
         body {
@@ -59,8 +56,6 @@
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
-            padding: 0;
-            overflow-x: hidden;
         }
 
         .wrapper {
@@ -69,33 +64,34 @@
             background: var(--bg-card);
             min-height: 100vh;
             position: relative;
-            box-shadow: 0 0 30px rgba(0,0,0,0.9);
+            box-shadow: 0 0 40px rgba(0,0,0,0.95);
             display: flex;
             flex-direction: column;
         }
 
-        /* Banner Aumentado e Visível */
+        /* Banner */
         .banner {
             width: 100%;
-            height: 150px;
+            height: 160px;
             position: relative;
             background-image: url('https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');
             background-size: cover;
-            background-position: center 20%;
+            background-position: center 25%;
         }
 
         .banner::after {
             content: '';
             position: absolute;
             bottom: 0; left: 0; right: 0;
-            height: 50px;
+            height: 80px;
             background: linear-gradient(to top, var(--bg-card), transparent);
         }
 
+        /* Perfil */
         .profile-section {
-            padding: 0 15px;
+            padding: 0 20px;
             position: relative;
-            margin-top: -55px;
+            margin-top: -60px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -104,14 +100,13 @@
         }
 
         .profile-img-box {
-            width: 85px; 
-            height: 85px;
+            width: 100px; 
+            height: 100px;
             border-radius: 50%;
-            border: 3px solid var(--bg-card);
+            border: 4px solid var(--bg-card);
             background: #222;
             position: relative;
-            z-index: 2;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.5);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.6);
         }
 
         .profile-img-box img {
@@ -123,341 +118,163 @@
 
         .status-dot {
             position: absolute;
-            bottom: 4px;
-            right: 4px;
-            width: 16px;
-            height: 16px;
+            bottom: 5px;
+            right: 5px;
+            width: 18px;
+            height: 18px;
             background-color: #00ff66;
-            border: 2px solid var(--bg-card);
+            border: 3px solid var(--bg-card);
             border-radius: 50%;
             animation: pulse-green-status 2s infinite;
         }
 
         @keyframes pulse-green-status {
-            0% { box-shadow: 0 0 0 0 rgba(0, 255, 102, 0.4); }
-            70% { box-shadow: 0 0 0 8px rgba(0, 255, 102, 0); }
+            0% { box-shadow: 0 0 0 0 rgba(0, 255, 102, 0.5); }
+            70% { box-shadow: 0 0 0 10px rgba(0, 255, 102, 0); }
             100% { box-shadow: 0 0 0 0 rgba(0, 255, 102, 0); }
         }
 
-        .user-info {
-            margin-top: 5px;
-            line-height: 1.1;
-        }
+        .user-info { margin-top: 8px; }
 
         .user-name {
-            font-size: 18px; 
+            font-size: 20px; 
             font-weight: 900;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 4px;
+            gap: 6px;
             letter-spacing: -0.5px;
         }
 
-        .verified {
-            color: #00b4d8;
-            font-size: 15px;
-        }
+        .verified { color: #00b4d8; font-size: 16px; }
+        .user-handle { color: var(--text-muted); font-size: 13px; margin-top: 2px; font-weight: 500; }
 
-        .user-handle {
-            color: var(--text-muted);
-            font-size: 12px;
-            margin-top: 2px;
-        }
-
-        /* Stats Compactos */
+        /* Stats */
         .stats-bar {
             display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin: 10px 0;
-            padding-bottom: 10px;
+            justify-content: space-between;
+            gap: 15px;
+            margin: 15px 0;
+            padding-bottom: 15px;
             border-bottom: 1px solid var(--border);
             width: 100%;
+            max-width: 300px;
         }
 
-        .stat-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            line-height: 1.1;
-        }
+        .stat-item { display: flex; flex-direction: column; align-items: center; }
+        .stat-val { font-size: 16px; font-weight: 900; color: #fff; }
+        .stat-label { font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 3px; font-weight: 700; }
 
-        .stat-val {
-            font-size: 15px;
-            font-weight: 800;
-            color: #fff;
-        }
-
-        .stat-label {
-            font-size: 9px;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-top: 2px;
-        }
-
-        /* Post Oculto Super Focado */
+        /* Post Oculto */
         .locked-post {
             background: #151515;
-            border: 1px solid #2a2a2a;
-            border-radius: 10px;
-            margin: 0 15px 12px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            margin: 0 20px 15px;
             position: relative;
             overflow: hidden;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 22px 15px; 
+            padding: 25px 20px; 
             text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
         }
 
         .locked-bg {
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
+            position: absolute; top: 0; left: 0; right: 0; bottom: 0;
             background: url('3d85e2cf-9f18-4fc8-b50e-1d83072bf6be.jpg');
-            background-size: cover;
-            background-position: center;
-            filter: blur(2px) brightness(0.65); 
-            z-index: 1;
+            background-size: cover; background-position: center;
+            filter: blur(3px) brightness(0.5); z-index: 1;
         }
 
-        .locked-content {
-            position: relative;
-            z-index: 2;
-            color: #fff;
-            line-height: 1.2;
-        }
+        .locked-content { position: relative; z-index: 2; }
+        .icon-lock { font-size: 30px; margin-bottom: 8px; text-shadow: 0 0 20px var(--primary); }
+        .locked-title { font-weight: 900; font-size: 16px; color: var(--primary); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 5px; }
+        .locked-desc { font-size: 12px; color: #eaeaea; font-weight: 500; line-height: 1.4; }
 
-        .icon-lock {
-            font-size: 26px;
-            margin-bottom: 4px;
-            text-shadow: 0 0 15px var(--primary);
-        }
+        /* Benefícios e Ação */
+        .action-area { padding: 0 20px 20px; flex: 1; display: flex; flex-direction: column; }
+        .benefits-list { list-style: none; background: #0a0a0a; border: 1px solid var(--border); border-radius: 12px; padding: 15px; margin-bottom: 15px; }
+        .benefits-list li { display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 15px; padding-bottom: 12px; border-bottom: 1px solid #1a1a1a; }
+        .benefits-list li:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+        .benefits-list li span { font-size: 22px; margin-bottom: 5px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5)); }
+        .benefits-list li strong { color: #fff; font-size: 14px; font-weight: 800; margin-bottom: 3px; }
+        .benefits-list li p { color: var(--text-muted); font-size: 11px; font-weight: 500; line-height: 1.4; }
 
-        .locked-title {
-            font-weight: 900;
-            font-size: 15px;
-            color: var(--primary);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 3px;
-        }
-
-        .locked-desc {
-            font-size: 11px;
-            color: #ddd;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.9);
-            font-weight: 600;
-        }
-
-        /* Ação e Benefícios Compactados */
-        .action-area {
-            padding: 0 15px 15px;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .benefits-list {
-            list-style: none;
-            background: #0d0d0d;
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 12px;
-            margin-bottom: 12px;
-        }
-
-        .benefits-list li {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            margin-bottom: 12px;
-            line-height: 1.2;
-        }
-
-        .benefits-list li:last-child {
-            margin-bottom: 0;
-        }
-
-        .benefits-list li span {
-            font-size: 18px; 
-            margin-bottom: 2px;
-            filter: drop-shadow(0 2px 2px rgba(0,0,0,0.8));
-        }
-
-        .benefits-list li strong {
-            color: #fff;
-            font-size: 12px;
-            font-weight: 800;
-            margin-bottom: 2px;
-        }
-
-        .benefits-list li p {
-            color: #999;
-            font-size: 10px;
-            font-weight: 500;
-        }
-
-        /* Formulário e Botão Diretos */
-        .form-group {
-            margin-bottom: 10px;
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 14px;
-            border-radius: 10px;
-            border: 1px solid #333;
-            background: #0a0a0a;
-            color: #fff;
-            font-size: 14px;
-            outline: none;
-            text-align: center;
-            font-weight: 700;
-            transition: border 0.3s, box-shadow 0.3s;
-        }
-
-        .form-group input:focus {
-            border-color: var(--primary);
-            box-shadow: 0 0 10px var(--primary-glow);
-        }
+        /* Formulário e Botões */
+        .form-group { margin-bottom: 12px; }
+        .form-group input { width: 100%; padding: 16px; border-radius: 10px; border: 1px solid #333; background: #0d0d0d; color: #fff; font-size: 15px; outline: none; text-align: center; font-weight: 600; transition: all 0.3s ease; }
+        .form-group input::placeholder { color: #666; font-weight: 500; }
+        .form-group input:focus { border-color: var(--primary); box-shadow: 0 0 15px var(--primary-glow); background: #111; }
 
         .btn-donate {
-            display: block;
-            width: 100%;
-            background: var(--btn-green); 
-            color: white;
-            font-size: 11px;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 0.2px;
-            padding: 16px 8px;
-            border-radius: 10px;
-            border: none;
-            cursor: pointer;
-            text-decoration: none;
-            text-align: center;
-            animation: super-pulse-button 1.8s infinite; 
-            transition: background 0.3s;
-            line-height: 1.3;
+            display: block; width: 100%; background: var(--btn-green); color: white; font-size: 13px; font-weight: 900;
+            text-transform: uppercase; letter-spacing: 0.5px; padding: 18px 10px; border-radius: 10px; border: none;
+            cursor: pointer; text-decoration: none; text-align: center; animation: super-pulse-button 2s infinite; 
+            transition: background 0.3s ease, transform 0.2s ease; box-shadow: 0 4px 15px rgba(0, 200, 83, 0.3);
         }
-
-        .btn-donate:hover {
-            background: #00e676; 
-        }
+        .btn-donate:hover { background: var(--btn-green-hover); transform: translateY(-2px); }
+        .btn-donate:active { transform: translateY(1px); }
 
         @keyframes super-pulse-button {
             0% { box-shadow: 0 0 0 0 var(--btn-green-glow); transform: scale(1); }
-            50% { transform: scale(1.03); }
-            70% { box-shadow: 0 0 0 12px rgba(0, 200, 83, 0); transform: scale(1); }
+            50% { transform: scale(1.02); }
+            70% { box-shadow: 0 0 0 15px rgba(0, 200, 83, 0); transform: scale(1); }
             100% { box-shadow: 0 0 0 0 rgba(0, 200, 83, 0); transform: scale(1); }
         }
 
-        /* Pop-up mais justinho e discreto */
-        .notification-container {
-            margin-top: 15px; 
-            min-height: 50px; 
-        }
-
+        /* Pop-ups */
+        .notification-container { margin-top: 15px; min-height: 55px; position: relative; }
         .popup-provas {
-            background: rgba(20, 20, 20, 0.98);
-            border-left: 3px solid var(--primary);
-            border-radius: 6px;
-            padding: 8px 12px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            width: 100%;
-            opacity: 0;
-            transform: translateY(5px);
-            transition: opacity 0.3s ease, transform 0.4s ease;
+            background: rgba(15, 15, 15, 0.95); border-left: 4px solid var(--primary); border-radius: 8px; padding: 10px 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8); display: flex; align-items: center; gap: 12px; width: 100%;
+            opacity: 0; transform: translateY(10px); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: absolute; top: 0; left: 0;
         }
+        .popup-provas.show { opacity: 1; transform: translateY(0); }
+        .popup-icon { font-size: 18px; background: #222; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border-radius: 50%; flex-shrink: 0; }
+        .popup-text { display: flex; flex-direction: column; text-align: left; }
+        .popup-text strong { color: #fff; font-size: 12px; font-weight: 800; }
+        .popup-text span { font-size: 11px; margin-top: 2px; }
 
-        .popup-provas.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        /* Rodapé */
+        footer { margin-top: auto; background: #080808; border-top: 1px solid #1a1a1a; padding: 20px; text-align: center; }
+        footer p { font-size: 10px; color: #555; line-height: 1.5; margin-bottom: 8px; }
+        footer p:last-child { margin-bottom: 0; }
+        .footer-links { margin: 10px 0; display: flex; justify-content: center; gap: 15px; }
+        .footer-links a { color: #777; text-decoration: none; font-size: 10px; font-weight: 500; transition: color 0.3s; }
+        .footer-links a:hover { color: var(--primary); }
 
-        .popup-icon {
-            font-size: 16px;
-            background: #222;
-            width: 32px; height: 32px;
-            display: flex; align-items: center; justify-content: center;
-            border-radius: 50%;
-            flex-shrink: 0;
+        /* Área do PIX */
+        .area-pix-box {
+            display: none; background: #111; border: 1px solid var(--primary); border-radius: 12px; 
+            padding: 20px; margin-top: 15px; text-align: center; box-shadow: 0 0 20px rgba(255, 0, 127, 0.15);
         }
-
-        .popup-text {
-            display: flex;
-            flex-direction: column;
-            text-align: left;
-            line-height: 1.2;
-        }
-
-        .popup-text strong {
-            color: #fff;
-            font-size: 11px;
-            font-weight: 800;
-        }
-
-        .popup-text span {
-            font-size: 10px;
-        }
-
-        /* Rodapé Micro */
-        footer {
-            margin-top: auto;
-            background: #080808;
-            border-top: 1px solid #1a1a1a;
-            padding: 12px;
-            text-align: center;
-        }
-
-        footer p {
-            font-size: 9px;
-            color: #444;
-            line-height: 1.3;
-            margin-bottom: 5px;
-        }
-
-        footer p:last-child {
-            margin-bottom: 0;
-        }
-
-        .footer-links {
-            margin-top: 6px;
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-        }
-
-        .footer-links a {
-            color: #555;
-            text-decoration: none;
-            font-size: 9px;
-        }
+        .area-pix-box h3 { color: var(--primary); font-size: 16px; font-weight: 900; margin-bottom: 8px; text-transform: uppercase; }
+        .area-pix-box p { font-size: 12px; color: #ccc; margin-bottom: 15px; line-height: 1.4; }
+        .area-pix-box img { width: 160px; height: 160px; border-radius: 10px; margin-bottom: 15px; border: 2px solid #222; display: none; margin-left: auto; margin-right: auto; }
+        .area-pix-box input { width: 100%; padding: 14px; background: #000; color: #00ff66; border: 1px dashed #444; border-radius: 8px; font-size: 12px; text-align: center; margin-bottom: 12px; outline: none; }
+        .btn-copiar { width: 100%; background: #00b4d8; color: #fff; padding: 16px; border: none; border-radius: 10px; font-weight: 900; font-size: 14px; cursor: pointer; transition: background 0.3s; }
+        .btn-copiar:hover { background: #0096c7; }
     </style>
 </head>
 <body>
 
     <div class="wrapper">
-        
-        <!-- Banner Otimizado para Aparecer Mais -->
+        <!-- Banner -->
         <div class="banner"></div>
 
-        <!-- Perfil Otimizado -->
+        <!-- Perfil -->
         <div class="profile-section">
             <div class="profile-img-box">
-                <img src="YASMIN.jpg" alt="Yasmin Rosinha">
+                <img src="YASMIN.jpg" alt="Yasmin Rosinha" onerror="this.src='https://via.placeholder.com/100/222/fff?text=Foto'">
                 <div class="status-dot"></div>
             </div>
             <div class="user-info">
-                <div class="user-name">Yasmin Rosinha <span class="verified">✔</span></div>
-                <div class="user-handle">@yasminrosinha</div>
+                <h1 class="user-name">Yasmin Rosinha <span class="verified">✔</span></h1>
+                <p class="user-handle">@yasminrosinha</p>
             </div>
             <div class="stats-bar">
                 <div class="stat-item"><span class="stat-val">142</span><span class="stat-label">Mídias</span></div>
@@ -466,54 +283,46 @@
             </div>
         </div>
 
-        <!-- Mídia Oculta Focada -->
+        <!-- Mídia Oculta -->
         <div class="locked-post">
             <div class="locked-bg"></div>
             <div class="locked-content">
                 <div class="icon-lock">🔒</div>
-                <div class="locked-title">12 Mídias Ocultas</div>
-                <div class="locked-desc">Faça uma doação para destravar este conteúdo exclusivo no seu WhatsApp.</div>
+                <h2 class="locked-title">12 Mídias Ocultas</h2>
+                <p class="locked-desc">Faça uma doação para destravar este conteúdo exclusivo no seu WhatsApp.</p>
             </div>
         </div>
 
-        <!-- Ação Compactada -->
+        <!-- Ação e Benefícios -->
         <div class="action-area">
-            
             <ul class="benefits-list">
-                <li>
-                    <span>🔥</span> 
-                    <strong>O meu álbum secreto sem censura</strong>
-                    <p>Tudo aquilo que você sempre quis ver liberado.</p>
-                </li>
-                <li>
-                    <span>😈</span> 
-                    <strong>Mídia com seu nome no meu corpo</strong>
-                    <p>Pra provar que eu fiz pensando só em você.</p>
-                </li>
-                <li>
-                    <span>📹</span> 
-                    <strong>Vídeos caseiros quentes e íntimos</strong>
-                    <p>O conteúdo viciante que não acha na internet.</p>
-                </li>
-                <li>
-                    <span>🎙️</span> 
-                    <strong>Áudios provocantes de tirar o fôlego</strong>
-                    <p>Feche os olhos e imagine a gente no sigilo.</p>
-                </li>
-                <li>
-                    <span>📲</span> 
-                    <strong>Acesso direto ao meu WhatsApp Pessoal</strong>
-                    <p>Pra gente trocar segredos toda madrugada.</p>
-                </li>
+                <li><span>🔥</span> <strong>O meu álbum secreto sem censura</strong><p>Tudo aquilo que você sempre quis ver liberado.</p></li>
+                <li><span>😈</span> <strong>Mídia com seu nome no meu corpo</strong><p>Pra provar que eu fiz pensando só em você.</p></li>
+                <li><span>📹</span> <strong>Vídeos caseiros quentes e íntimos</strong><p>O conteúdo viciante que não acha na internet.</p></li>
+                <li><span>🎙️</span> <strong>Áudios provocantes de tirar o fôlego</strong><p>Feche os olhos e imagine a gente no sigilo.</p></li>
+                <li><span>📲</span> <strong>Acesso direto ao meu WhatsApp Pessoal</strong><p>Pra gente trocar segredos toda madrugada.</p></li>
             </ul>
 
             <div class="form-group">
-                <input type="tel" id="whatsapp" placeholder="Seu WhatsApp: (DDD) 99999-9999" required>
+                <input type="tel" id="whatsapp" placeholder="Seu WhatsApp: (DDD) 99999-9999" required maxlength="15" oninput="maskPhone(this)">
             </div>
 
-            <a href="https://link.syncpayments.com.br/pys6Av" id="btnFazerDoacao" class="btn-donate" onclick="dispararPixelEValidar(event)">
-                CLIQUE AQUI APENAS SE FOR FAZER A DOAÇÃO AGORA
-            </a>
+            <button id="btnFazerDoacao" class="btn-donate" onclick="gerarCobrancaPix(event)">
+                Clique aqui apenas se for fazer a doação agora
+            </button>
+
+            <!-- CONTAINER DO PIX (Inicia oculto) -->
+            <div id="areaPix" class="area-pix-box">
+                <h3>PIX Gerado com Sucesso!</h3>
+                <p>Copie o código abaixo e cole na área "Pix Copia e Cola" do seu banco para destravar agora mesmo.</p>
+                
+                <img id="qrCodeImg" src="" alt="QR Code PIX">
+                <input type="text" id="pixCopiaCola" readonly value="">
+                
+                <button class="btn-copiar" onclick="copiarPix()">
+                    📋 COPIAR CÓDIGO PIX
+                </button>
+            </div>
 
             <div class="notification-container">
                 <div id="popupProvas" class="popup-provas">
@@ -524,47 +333,139 @@
                     </div>
                 </div>
             </div>
-
         </div>
 
-        <!-- Rodapé Micro -->
+        <!-- Rodapé -->
         <footer>
             <p>Este site não é afiliado ao Facebook. A responsabilidade é exclusiva do nosso site. FACEBOOK é uma marca da FACEBOOK, Inc.</p>
             <p>Conteúdos estritamente para maiores de 18 anos.</p>
             <div class="footer-links">
-                <a href="#">Termos</a>
-                <a href="#">Privacidade</a>
+                <a href="#">Termos de Uso</a>
+                <a href="#">Políticas de Privacidade</a>
             </div>
-            <p style="margin-top: 8px;">&copy; 2026 Yasmin Rosinha.</p>
+            <p>&copy; 2026 Yasmin Rosinha. Todos os direitos reservados.</p>
         </footer>
     </div>
 
     <script>
-        function dispararPixelEValidar(event) {
-            const zap = document.getElementById('whatsapp').value;
-            if(zap.replace(/\D/g, '').length < 10) {
-                event.preventDefault();
-                alert('Por favor, digite seu WhatsApp corretamente para que o sistema libere os conteúdos!');
-                document.getElementById('whatsapp').focus();
+        // 1. MÁSCARA DO TELEFONE
+        function maskPhone(input) {
+            let value = input.value.replace(/\D/g, '');
+            if (value.length > 11) value = value.slice(0, 11);
+            if (value.length > 2) value = `(${value.slice(0,2)}) ${value.slice(2)}`;
+            if (value.length > 10) value = `${value.slice(0,10)}-${value.slice(10)}`;
+            input.value = value;
+        }
+
+        // 2. INTEGRAÇÃO DIRETA COM ESCAMA BLACK API E GERAÇÃO DO PIX
+        async function gerarCobrancaPix(event) {
+            event.preventDefault(); 
+            
+            const zapInput = document.getElementById('whatsapp');
+            const zapValue = zapInput.value.replace(/\D/g, '');
+            const botao = document.getElementById('btnFazerDoacao');
+            const areaPix = document.getElementById('areaPix');
+            const inputCopiaCola = document.getElementById('pixCopiaCola');
+            const qrCodeImg = document.getElementById('qrCodeImg');
+            
+            // Validação simples de DDD e número
+            if(zapValue.length < 10) {
+                alert('Por favor, digite seu WhatsApp corretamente com o DDD.');
+                zapInput.focus();
+                zapInput.style.borderColor = '#ff3333';
+                setTimeout(() => zapInput.style.borderColor = '#333', 2000);
                 return;
             }
             
-            // DISPARA O EVENTO DE COMPRA NO MOMENTO DO CLIQUE
+            // Dispara evento de check-out no Pixel (Intenção)
             if (typeof fbq === 'function') {
-                fbq('track', 'Purchase', { value: 15.00, currency: 'BRL' });
+                fbq('track', 'InitiateCheckout', { value: 25.00, currency: 'BRL' });
+            }
+
+            // Estado de carregamento
+            botao.innerText = "GERANDO SEU PIX... AGUARDE";
+            botao.style.pointerEvents = "none";
+            botao.style.opacity = "0.7";
+
+            try {
+                // Requisição direto para a URL da documentação
+                const resposta = await fetch('https://escamablack.com/api/v1/payments', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-API-Key': 'pk_live_536e764c80cedbc5a50e28990517e86d92e8db9ae0a67858'
+                    },
+                    body: JSON.stringify({
+                        method: "pix",
+                        amount: 2500, // 2500 centavos = R$ 25,00
+                        customer: {
+                            name: "Cliente VIP",
+                            email: "zap" + zapValue + "@email.com",
+                            document: "00000000000" // Algumas APIs exigem o CPF, enviando um genérico por padrão
+                        }
+                    })
+                });
+
+                const dados = await resposta.json();
+                console.log("Retorno da Escama Black:", dados); // Veja isso no Console apertando F12 se o PIX não aparecer
+
+                if (resposta.ok) {
+                    // Oculta o botão de doação e exibe a tela do PIX
+                    botao.style.display = 'none'; 
+                    areaPix.style.display = 'block';
+                    
+                    // Tratamento do QR Code (Adapte os nomes abaixo se a API devolver diferente)
+                    if(dados.qrcode_base64 || dados.qr_code) {
+                        qrCodeImg.src = dados.qrcode_base64 || dados.qr_code;
+                        qrCodeImg.style.display = 'block';
+                    }
+                    
+                    // Tratamento do Copia e Cola
+                    inputCopiaCola.value = dados.pix_copia_e_cola || dados.payload || dados.qr_code_text || "Verifique o console (F12) para ajustar esta variável";
+
+                    // Dispara a Purchase apenas quando a cobrança é criada com sucesso
+                    if (typeof fbq === 'function') {
+                        fbq('track', 'Purchase', { value: 25.00, currency: 'BRL' });
+                    }
+                } else {
+                    alert("Erro ao processar: " + (dados.message || "Não foi possível gerar."));
+                    restaurarBotao(botao);
+                }
+
+            } catch (error) {
+                console.error("Erro na requisição (CORS ou rede):", error);
+                alert("O navegador bloqueou a requisição direta para a API (Erro de CORS) ou houve falha de rede.");
+                restaurarBotao(botao);
             }
         }
 
+        function restaurarBotao(botao) {
+            botao.innerText = "CLIQUE AQUI APENAS SE FOR FAZER A DOAÇÃO AGORA";
+            botao.style.pointerEvents = "auto";
+            botao.style.opacity = "1";
+        }
+
+        // 3. FUNÇÃO DE COPIAR PIX
+        function copiarPix() {
+            const copiaCola = document.getElementById('pixCopiaCola');
+            copiaCola.select();
+            copiaCola.setSelectionRange(0, 99999); // Para dispositivos móveis
+            navigator.clipboard.writeText(copiaCola.value);
+            alert("Código PIX copiado com sucesso! Abra o app do seu banco e escolha a opção 'Pix Copia e Cola'.");
+        }
+
+        // 4. SISTEMA DE POP-UPS (Prova Social)
         const doadores = [
             { nome: "Marcos V. (SP)", desc: "Fez uma doação", color: "#00ff66", icone: "💸" },
             { nome: "Diego R. (RJ)", desc: "Destravou o VIP", color: "#00b4d8", icone: "🔓" },
-            { nome: "Thiago L. (MG)", desc: "Doou R$ 35,00", color: "#00ff66", icone: "💰" }
+            { nome: "Thiago L. (MG)", desc: "Doou R$ 25,00", color: "#00ff66", icone: "💰" },
+            { nome: "Carlos E. (PR)", desc: "Acessou o álbum", color: "#ff007f", icone: "👀" }
         ];
 
         const entregasZap = [
             { nome: "Acesso Liberado 😈", desc: "Fotos no WhatsApp", color: "#ff007f", icone: "📸" },
             { nome: "WhatsApp Verificado", desc: "Mídia entregue", color: "#ff007f", icone: "🔥" },
-            { nome: "Pacote Completo", desc: "Fotos enviadas", color: "#ff007f", icone: "📲" }
+            { nome: "Pacote Completo", desc: "Vídeos enviados", color: "#ff007f", icone: "📲" }
         ];
 
         let alternador = true;
@@ -575,9 +476,8 @@
             const titleElem = document.getElementById('popupTitle');
             const descElem = document.getElementById('popupDesc');
 
-            const item = alternador 
-                ? doadores[Math.floor(Math.random() * doadores.length)] 
-                : entregasZap[Math.floor(Math.random() * entregasZap.length)];
+            const arr = alternador ? doadores : entregasZap;
+            const item = arr[Math.floor(Math.random() * arr.length)];
 
             iconElem.innerText = item.icone;
             titleElem.innerText = item.nome;
@@ -588,13 +488,13 @@
             alternador = !alternador;
             popup.classList.add('show');
 
-            setTimeout(() => { popup.classList.remove('show'); }, 3500);
+            setTimeout(() => { popup.classList.remove('show'); }, 4000);
         }
 
         setTimeout(() => {
             mostrarPopup();
-            setInterval(mostrarPopup, 6000);
-        }, 1500);
+            setInterval(mostrarPopup, 7000);
+        }, 2000);
     </script>
 </body>
 </html>
