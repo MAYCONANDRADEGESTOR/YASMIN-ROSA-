@@ -403,14 +403,14 @@
                     botao.style.display = 'none'; 
                     areaPix.style.display = 'block';
                     
-                    // Tratamento do QR Code
-                    if(dados.qrcode_base64 || dados.qr_code) {
-                        qrCodeImg.src = dados.qrcode_base64 || dados.qr_code;
+                    // Tratamento do QR Code com as variáveis da Escama Black
+                    if(dados.qrCodeImage) {
+                        qrCodeImg.src = dados.qrCodeImage;
                         qrCodeImg.style.display = 'block';
                     }
                     
-                    // Tratamento do Copia e Cola
-                    inputCopiaCola.value = dados.pix_copia_e_cola || dados.payload || dados.qr_code_text || "Verifique o console (F12) para ajustar esta variável";
+                    // Tratamento do Copia e Cola com as variáveis da Escama Black
+                    inputCopiaCola.value = dados.qrCode;
 
                     // Dispara a Purchase apenas quando a cobrança é criada com sucesso
                     if (typeof fbq === 'function') {
