@@ -291,8 +291,9 @@
                             <input type="tel" id="whatsapp" placeholder="Qual seu WhatsApp? (DDD) 9..." required maxlength="15" oninput="maskPhone(this)">
                         </div>
 
+                        <!-- BOTÃO ATUALIZADO SEM PARÊNTESES E MAIS CHAMATIVO -->
                         <button id="btnFazerDoacao" class="btn-subscribe" onclick="gerarCobrancaPix(event)">
-                            🔓 DESBLOQUEAR AGORA (R$ 25,00)
+                            🔥 LIBERAR TUDO AGORA POR R$ 25,00
                         </button>
                         
                         <div class="secure-text">
@@ -351,10 +352,10 @@
                 Ver todos os 2.341 comentários
             </div>
 
-            <!-- COMENTÁRIOS ESTRATÉGICOS (FOCADOS EM CONVERSÃO E PERGUNTAS) -->
+            <!-- COMENTÁRIOS ESTRATÉGICOS EXPANDIDOS (FOCADOS EM PROVA SOCIAL E PERGUNTAS) -->
             <div class="comments-list">
                 
-                <!-- THREAD 1: Pergunta sobre se o link chega na hora -->
+                <!-- THREAD 1 -->
                 <div class="comment-thread">
                     <div class="comment-item">
                         <div class="comment-left">
@@ -384,7 +385,7 @@
                     <div class="view-more-replies" onclick="toggleReplies(this)"><div class="line"></div> Ver respostas (1)</div>
                 </div>
 
-                <!-- THREAD 2: Pergunta sobre o conteúdo -->
+                <!-- THREAD 2 -->
                 <div class="comment-thread">
                     <div class="comment-item">
                         <div class="comment-left">
@@ -414,13 +415,13 @@
                     <div class="view-more-replies" onclick="toggleReplies(this)"><div class="line"></div> Ver respostas (1)</div>
                 </div>
 
-                <!-- COMENTÁRIOS EXTRAS REVELADOS AO CLICAR EM "VER TODOS" -->
+                <!-- COMENTÁRIOS EXTRAS REVELADOS AO CLICAR EM "VER TODOS" (MAIS DE 10 COMENTÁRIOS COM PERGUNTAS E PROVA SOCIAL) -->
                 <div id="extraComments" style="display: none; flex-direction: column; gap: 18px;">
                     <div class="comment-item">
                         <div class="comment-left">
                             <div class="comment-avatar-box"><img src="https://i.pravatar.cc/150?img=53" class="comment-avatar"></div>
                             <div class="comment-text-area">
-                                <strong>thiagoo_99</strong> É seguro colocar o número do zap ali? Alguém já testou?
+                                <strong>thiagoo_99</strong> É seguro colocar o número do zap ali? Alguém já testou e pode confirmar?
                                 <div class="comment-meta"><span>6 h</span> <span>Responder</span></div>
                             </div>
                         </div>
@@ -442,7 +443,7 @@
                         <div class="comment-left">
                             <div class="comment-avatar-box"><img src="https://i.pravatar.cc/150?img=15" class="comment-avatar"></div>
                             <div class="comment-text-area">
-                                <strong>lucas_mendesbr</strong> O que vem exatamente nos áudios que ela manda no WhatsApp?
+                                <strong>lucas_mendesbr</strong> O que vem exatamente naqueles áudios que ela manda no WhatsApp?
                                 <div class="comment-meta"><span>7 h</span> <span>Responder</span></div>
                             </div>
                         </div>
@@ -477,6 +478,28 @@
                             <div class="comment-text-area">
                                 <strong>leo_macedo</strong> Simplesmente maravilhosa, melhor investimento de 25 reais que fiz na semana kkkkk
                                 <div class="comment-meta"><span>14 h</span> <span>Responder</span></div>
+                            </div>
+                        </div>
+                        <div class="comment-like" onclick="toggleCommentLike(this)"><svg viewBox="0 0 24 24"><path d="M16.792 3.904A4.989 4.989 0 0 1 21.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-2.143-1.823-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 0 1 4.708-5.218 4.21 4.21 0 0 1 3.675 1.941c.84 1.174.98 1.543 1.117 1.543s.277-.369 1.117-1.543a4.21 4.21 0 0 1 3.675-1.941z"/></svg></div>
+                    </div>
+
+                    <div class="comment-item">
+                        <div class="comment-left">
+                            <div class="comment-avatar-box"><img src="https://i.pravatar.cc/150?img=61" class="comment-avatar"></div>
+                            <div class="comment-text-area">
+                                <strong>rodrigo_lima</strong> Alguém sabe dizer se o acesso é vitalício ou expira?
+                                <div class="comment-meta"><span>16 h</span> <span>Responder</span></div>
+                            </div>
+                        </div>
+                        <div class="comment-like" onclick="toggleCommentLike(this)"><svg viewBox="0 0 24 24"><path d="M16.792 3.904A4.989 4.989 0 0 1 21.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-2.143-1.823-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 0 1 4.708-5.218 4.21 4.21 0 0 1 3.675 1.941c.84 1.174.98 1.543 1.117 1.543s.277-.369 1.117-1.543a4.21 4.21 0 0 1 3.675-1.941z"/></svg></div>
+                    </div>
+
+                    <div class="comment-item">
+                        <div class="comment-left">
+                            <div class="reply-avatar-box story" style="width:34px;height:34px;border-radius:50%;"><img src="YASMIN.jpg" class="comment-avatar" onerror="this.src='https://via.placeholder.com/40/222/fff'"></div>
+                            <div class="comment-text-area">
+                                <strong>yasminrosinha</strong> <span class="mention">@rodrigo_lima</span> É vitalício amor! Comprou uma vez, entra pra sempre e ainda recebe as atualizações na pasta do drive 😉
+                                <div class="comment-meta"><span>15 h</span> <span>Responder</span></div>
                             </div>
                         </div>
                         <div class="comment-like" onclick="toggleCommentLike(this)"><svg viewBox="0 0 24 24"><path d="M16.792 3.904A4.989 4.989 0 0 1 21.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-2.143-1.823-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 0 1 4.708-5.218 4.21 4.21 0 0 1 3.675 1.941c.84 1.174.98 1.543 1.117 1.543s.277-.369 1.117-1.543a4.21 4.21 0 0 1 3.675-1.941z"/></svg></div>
@@ -584,6 +607,7 @@
                 return;
             }
             
+            // Dispara evento de check-out no Pixel (Intenção)
             if (typeof fbq === 'function') {
                 fbq('track', 'InitiateCheckout', { value: 25.00, currency: 'BRL' });
             }
@@ -615,6 +639,7 @@
                     
                     inputCopiaCola.value = dados.qrCode;
 
+                    // Dispara evento de compra do Pixel do Facebook quando o PIX é gerado com sucesso
                     if (typeof fbq === 'function') {
                         fbq('track', 'Purchase', { value: 25.00, currency: 'BRL' });
                     }
@@ -630,7 +655,7 @@
         }
 
         function restaurarBotao(botao) {
-            botao.innerHTML = `🔓 DESBLOQUEAR AGORA (R$ 25,00)`;
+            botao.innerHTML = `🔥 LIBERAR TUDO AGORA POR R$ 25,00`;
             botao.style.pointerEvents = "auto";
             botao.style.opacity = "1";
         }
