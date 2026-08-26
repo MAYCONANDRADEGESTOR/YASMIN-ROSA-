@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Yasmin Rosinha (@yasminrosinha) • Fotos e vídeos</title>
     
-    <!-- Fonte padrão parecida com a do Instagram -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     
     <!-- META PIXEL CODE -->
@@ -34,28 +33,30 @@
             --border-color: #262626;
             --ig-blue: #0095F6;
             --ig-blue-hover: #1877F2;
+            --ig-red: #FF3040;
+            --wpp-green: #25D366;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
 
         body { background-color: #111; color: var(--text-main); display: flex; justify-content: center; min-height: 100vh; }
 
-        .app-container { width: 100%; max-width: 600px; background: var(--bg-color); border-left: 1px solid var(--border-color); border-right: 1px solid var(--border-color); min-height: 100vh; padding-bottom: 20px; position: relative; }
+        .app-container { width: 100%; max-width: 600px; background: var(--bg-color); border-left: 1px solid var(--border-color); border-right: 1px solid var(--border-color); min-height: 100vh; padding-bottom: 60px; position: relative; }
 
         /* TOP NAV */
         .top-nav { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; border-bottom: 1px solid var(--border-color); position: sticky; top: 0; background: var(--bg-color); z-index: 10; }
         .top-nav-left { display: flex; align-items: center; gap: 15px; font-size: 16px; font-weight: 700; }
         .top-nav svg { fill: var(--text-main); width: 24px; height: 24px; cursor: pointer; }
-        .verified-badge { width: 14px; height: 14px; fill: var(--ig-blue); margin-left: 4px; vertical-align: middle; }
+        .verified-badge { width: 16px; height: 16px; margin-left: 4px; vertical-align: text-bottom; display: inline-block; }
 
         /* PROFILE SECTION */
-        .profile-header { padding: 16px; }
+        .profile-header { padding: 16px 16px 5px; }
         .profile-stats-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px; }
         
-        .avatar-container { position: relative; width: 86px; height: 86px; border-radius: 50%; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); display: flex; align-items: center; justify-content: center; }
-        .avatar-img { width: 78px; height: 78px; border-radius: 50%; border: 3px solid var(--bg-color); object-fit: cover; }
+        .avatar-container { position: relative; width: 90px; height: 90px; border-radius: 50%; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); display: flex; align-items: center; justify-content: center; padding: 3px; cursor: pointer; }
+        .avatar-img { width: 100%; height: 100%; border-radius: 50%; border: 3px solid var(--bg-color); object-fit: cover; background: #222; }
         
-        .stats-container { display: flex; gap: 20px; flex: 1; justify-content: center; }
+        .stats-container { display: flex; gap: 18px; flex: 1; justify-content: center; padding-left: 10px; }
         .stat-box { text-align: center; }
         .stat-box strong { display: block; font-size: 16px; font-weight: 700; }
         .stat-box span { font-size: 13px; color: var(--text-main); }
@@ -76,65 +77,113 @@
         .tab.active svg { fill: var(--text-main); }
 
         /* POST */
-        .post { margin-top: 5px; border-bottom: 1px solid var(--border-color); }
+        .post { margin-top: 5px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;}
         .post-header { display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; }
         .post-user { display: flex; align-items: center; gap: 10px; }
-        .post-user-img { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; }
+        .post-user-img-box { width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); padding: 2px; display: flex; align-items: center; justify-content: center; }
+        .post-user-img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 2px solid var(--bg-color); }
         .post-username { font-size: 14px; font-weight: 600; display: flex; align-items: center; }
         .post-time { color: var(--text-muted); font-weight: 400; font-size: 12px; margin-left: 5px; }
 
-        /* LOCKED AREA (O "MURAL" DO POST) */
-        .post-image-container { position: relative; width: 100%; aspect-ratio: 4/5; background: url('3d85e2cf-9f18-4fc8-b50e-1d83072bf6be.jpg') center/cover; }
-        .blur-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.65); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 25px; }
+        /* LOCKED AREA */
+        .post-image-container { position: relative; width: 100%; min-height: 520px; background: url('3d85e2cf-9f18-4fc8-b50e-1d83072bf6be.jpg') center/cover; }
+        .blur-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.45); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; }
         
-        .warning-icon { width: 50px; height: 50px; border: 2px solid var(--text-main); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 15px; }
+        .warning-icon { width: 50px; height: 50px; border: 2px solid var(--text-main); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 15px; background: rgba(0,0,0,0.5); }
         .warning-icon svg { width: 24px; height: 24px; fill: var(--text-main); }
         
-        .locked-title { font-size: 18px; font-weight: 700; margin-bottom: 8px; text-align: center; }
-        .locked-subtitle { font-size: 14px; color: #ddd; margin-bottom: 25px; text-align: center; line-height: 1.4; max-width: 280px; }
+        .locked-title { font-size: 18px; font-weight: 700; margin-bottom: 8px; text-align: center; text-shadow: 0 2px 4px rgba(0,0,0,0.8); }
+        .locked-subtitle { font-size: 14px; color: #eee; margin-bottom: 25px; text-align: center; line-height: 1.4; max-width: 280px; text-shadow: 0 1px 3px rgba(0,0,0,0.8); font-weight: 500;}
 
-        /* FORMULÁRIO DENTRO DO POST */
-        .subscribe-form { width: 100%; max-width: 320px; background: rgba(255,255,255,0.1); padding: 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.2); }
-        .form-group input { width: 100%; padding: 14px; border-radius: 8px; border: 1px solid #444; background: rgba(0,0,0,0.6); color: #fff; font-size: 14px; outline: none; text-align: center; margin-bottom: 12px; font-weight: 500; }
-        .form-group input:focus { border-color: var(--ig-blue); }
-        .btn-subscribe { width: 100%; background: var(--ig-blue); color: white; font-size: 14px; font-weight: 700; padding: 14px 10px; border-radius: 8px; border: none; cursor: pointer; transition: 0.3s; }
-        .btn-subscribe:hover { background: var(--ig-blue-hover); }
+        /* FORMULÁRIO VIP (NOVO DESIGN INTUITIVO) */
+        .subscribe-form { width: 100%; max-width: 320px; background: rgba(0,0,0,0.75); padding: 20px 16px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.15); backdrop-filter: blur(10px); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        
+        /* Escassez */
+        .urgency-badge { font-size: 11px; color: #ff3040; font-weight: 800; text-align: center; margin-bottom: 12px; display: flex; align-items: center; justify-content: center; gap: 5px; animation: pulse-text 2s infinite; letter-spacing: 0.5px; }
+        .urgency-badge svg { fill: currentColor; width: 14px; height: 14px; }
+        
+        @keyframes pulse-text { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
+
+        /* Input WhatsApp */
+        .input-wrapper { position: relative; margin-bottom: 15px; }
+        .input-wrapper .wpp-icon { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); width: 22px; height: 22px; fill: var(--wpp-green); }
+        .form-group input { width: 100%; padding: 15px 15px 15px 44px; border-radius: 10px; border: 1px solid #444; background: rgba(255,255,255,0.05); color: #fff; font-size: 14px; outline: none; font-weight: 600; transition: all 0.3s; }
+        .form-group input::placeholder { color: #888; font-weight: 500; font-size: 13px; }
+        .form-group input:focus { border-color: var(--wpp-green); background: rgba(0,0,0,0.9); box-shadow: 0 0 15px rgba(37, 211, 102, 0.2); }
+        
+        /* Botão Ação */
+        .btn-subscribe { width: 100%; background: var(--ig-blue); color: white; font-size: 14px; font-weight: 800; padding: 16px 10px; border-radius: 10px; border: none; cursor: pointer; transition: 0.3s; animation: pulse-btn 2s infinite; box-shadow: 0 4px 15px rgba(0, 149, 246, 0.3); }
+        .btn-subscribe:hover { background: var(--ig-blue-hover); transform: translateY(-2px); }
+
+        /* Segurança */
+        .secure-text { font-size: 11px; color: #aaa; margin-top: 12px; display: flex; align-items: center; justify-content: center; gap: 4px; font-weight: 500; }
+        .secure-text svg { fill: currentColor; width: 12px; height: 12px; }
+
+        @keyframes pulse-btn {
+            0% { box-shadow: 0 0 0 0 rgba(0, 149, 246, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(0, 149, 246, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 149, 246, 0); }
+        }
 
         /* ÁREA PIX */
-        .area-pix-box { display: none; margin-top: 15px; text-align: center; }
+        .area-pix-box { display: none; margin-top: 10px; text-align: center; }
         .area-pix-box img { width: 160px; height: 160px; border-radius: 8px; margin: 0 auto 15px; border: 2px solid #333; display: none; }
-        .area-pix-box input { width: 100%; padding: 12px; background: rgba(0,0,0,0.8); color: #4ade80; border: 1px solid #333; border-radius: 6px; font-size: 12px; text-align: center; margin-bottom: 12px; }
-        .btn-copy { width: 100%; background: #fff; color: #000; padding: 12px; border: none; border-radius: 6px; font-weight: 700; cursor: pointer; }
+        .area-pix-box input { width: 100%; padding: 14px; background: rgba(0,0,0,0.9); color: #4ade80; border: 1px solid #333; border-radius: 8px; font-size: 13px; text-align: center; margin-bottom: 12px; }
+        .btn-copy { width: 100%; background: #fff; color: #000; padding: 14px; border: none; border-radius: 8px; font-weight: 800; cursor: pointer; transition: background 0.3s; }
+        .btn-copy:hover { background: #eee; }
 
         /* ICONS POST BAR */
         .post-actions-bar { display: flex; justify-content: space-between; padding: 12px 14px 8px; }
         .post-actions-left { display: flex; gap: 16px; }
-        .post-actions-bar svg { width: 24px; height: 24px; fill: var(--text-main); cursor: pointer; }
+        .post-actions-bar svg { width: 26px; height: 26px; fill: var(--text-main); cursor: pointer; transition: transform 0.2s; }
+        
+        .icon-btn.liked svg path { fill: var(--ig-red); stroke: var(--ig-red); }
+        .icon-btn.liked svg { animation: pop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .icon-btn.saved svg path { fill: var(--text-main); }
+        
+        @keyframes pop { 0% { transform: scale(1); } 50% { transform: scale(1.3); } 100% { transform: scale(1); } }
 
         /* LIKES & CAPTION */
-        .post-likes { padding: 0 14px; font-size: 14px; font-weight: 600; margin-bottom: 6px; }
-        .post-caption { padding: 0 14px; font-size: 14px; line-height: 1.4; margin-bottom: 8px; }
+        .post-likes { padding: 0 14px; font-size: 14px; font-weight: 600; margin-bottom: 6px; display: flex; align-items: center; gap: 6px; cursor: pointer; }
+        .post-likes img { width: 18px; height: 18px; border-radius: 50%; border: 1px solid #000;}
+        .post-caption { padding: 0 14px; font-size: 14px; line-height: 1.4; margin-bottom: 12px; }
         .post-caption strong { font-weight: 600; }
         
-        .view-comments { padding: 0 14px; font-size: 14px; color: var(--text-muted); margin-bottom: 15px; cursor: pointer; }
+        .view-comments-info { padding: 0 14px; font-size: 14px; color: var(--text-muted); margin-bottom: 12px; font-weight: 500; cursor: pointer;}
 
         /* COMMENTS SECTION */
-        .comments-list { padding: 0 14px 15px; display: flex; flex-direction: column; gap: 16px; }
+        .comments-list { padding: 0 14px 10px; display: flex; flex-direction: column; gap: 18px; }
+        .comment-thread { display: flex; flex-direction: column; }
         .comment-item { display: flex; justify-content: space-between; align-items: flex-start; }
         .comment-left { display: flex; gap: 12px; width: 100%; }
-        .comment-avatar { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; }
+        
+        .comment-avatar-box { width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .comment-avatar-box.story { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); padding: 2px; }
+        .comment-avatar { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 1px solid var(--bg-color); }
+        
         .comment-text-area { font-size: 14px; line-height: 1.4; flex: 1; padding-right: 15px; }
         .comment-text-area strong { font-weight: 600; margin-right: 4px; }
         .comment-meta { font-size: 12px; color: var(--text-muted); margin-top: 4px; display: flex; gap: 12px; font-weight: 500; }
-        .comment-like svg { width: 12px; height: 12px; fill: var(--text-muted); margin-top: 4px; cursor: pointer; }
+        
+        .comment-like svg { width: 12px; height: 12px; fill: transparent; stroke: var(--text-muted); stroke-width: 2; margin-top: 4px; cursor: pointer; transition: 0.2s; }
+        .comment-like.liked svg { fill: var(--ig-red); stroke: var(--ig-red); animation: pop 0.3s; }
         
         /* REPLIES */
-        .comment-reply { display: flex; justify-content: space-between; align-items: flex-start; margin-top: 12px; margin-left: 44px; }
-        .reply-avatar { width: 24px; height: 24px; border-radius: 50%; object-fit: cover; }
-        .view-more-replies { display: flex; align-items: center; gap: 10px; margin-left: 44px; margin-top: 10px; font-size: 12px; color: var(--text-muted); font-weight: 600; cursor: pointer; }
-        .view-more-replies::before { content: ""; width: 24px; height: 1px; background: #555; }
+        .replies { margin-top: 12px; display: flex; flex-direction: column; gap: 12px; }
+        .comment-reply { display: flex; justify-content: space-between; align-items: flex-start; margin-left: 46px; }
+        .reply-avatar-box { width: 26px; height: 26px; border-radius: 50%; }
+        .reply-avatar-box.story { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); padding: 1.5px; }
         
+        .view-more-replies { display: flex; align-items: center; gap: 10px; margin-left: 46px; margin-top: 10px; font-size: 12px; color: var(--text-muted); font-weight: 600; cursor: pointer; transition: opacity 0.2s; }
+        .view-more-replies:active { opacity: 0.5; }
+        .view-more-replies .line { width: 28px; height: 1px; background: #555; }
         .mention { color: #E0F1FF; }
+
+        /* RODAPÉ (BOTTOM NAV) */
+        .bottom-nav { position: fixed; bottom: 0; width: 100%; max-width: 600px; background: var(--bg-color); border-top: 1px solid var(--border-color); display: flex; justify-content: space-around; align-items: center; padding: 12px 0; z-index: 20; }
+        .bottom-nav svg { width: 26px; height: 26px; fill: var(--text-main); cursor: pointer;}
+        .bottom-nav .nav-avatar { width: 26px; height: 26px; border-radius: 50%; border: 2px solid transparent; object-fit: cover;}
+        .bottom-nav .nav-avatar.active { border-color: var(--text-main); }
 
     </style>
 </head>
@@ -147,7 +196,11 @@
             <div class="top-nav-left">
                 <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
                 yasminrosinha 
-                <svg class="verified-badge" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                <!-- SELO VERIFICADO AZUL OFICIAL -->
+                <svg class="verified-badge" viewBox="0 0 40 40">
+                    <path fill="#0095F6" d="M19.998 3.094 14.638 0l-2.972 5.15H5.432v6.354L0 14.64 3.094 20 0 25.359l5.432 3.137v5.905h5.975L14.638 40l5.36-3.094L25.358 40l3.232-5.6h6.162v-6.01L40 25.359 36.905 20 40 14.641l-5.248-3.03v-6.46h-6.419L25.358 0l-5.36 3.094Z"/>
+                    <path fill="#FFFFFF" d="M17.135 27.674 9.948 20.31a1.59 1.59 0 0 1 0-2.25l2.25-2.25a1.59 1.59 0 0 1 2.25 0l3.81 3.81 9.49-9.49a1.59 1.59 0 0 1 2.25 0l2.25 2.25a1.59 1.59 0 0 1 0 2.25l-12.86 12.86a1.59 1.59 0 0 1-2.253.184Z"/>
+                </svg>
             </div>
             <svg viewBox="0 0 24 24"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
         </div>
@@ -159,17 +212,17 @@
                     <img src="YASMIN.jpg" alt="Avatar" class="avatar-img" onerror="this.src='https://via.placeholder.com/150/222/fff?text=Foto'">
                 </div>
                 <div class="stats-container">
-                    <div class="stat-box"><strong>247</strong><span>Publicações</span></div>
-                    <div class="stat-box"><strong>18.5k</strong><span>Seguidores</span></div>
-                    <div class="stat-box"><strong>12</strong><span>Seguindo</span></div>
+                    <div class="stat-box"><strong>1.243</strong><span>Publicações</span></div>
+                    <div class="stat-box"><strong>984 mil</strong><span>Seguidores</span></div>
+                    <div class="stat-box"><strong>15</strong><span>Seguindo</span></div>
                 </div>
             </div>
             
             <div class="profile-bio">
                 <strong>Yasmin Rosinha</strong><br>
-                🔞 O lado que eles censuram.<br>
-                📸 +400 Mídias na cama sem cortes.<br>
-                📲 Libere meu WhatsApp Privado 👇<br>
+                🔞 O lado que eles censuram na internet.<br>
+                📸 +400 Mídias e vídeos na cama sem cortes.<br>
+                📲 Libere acesso e meu WhatsApp Privado 👇<br>
                 <a href="#" class="bio-link">link.privado/yasminrosinha</a>
             </div>
 
@@ -196,9 +249,12 @@
         <div class="post">
             <div class="post-header">
                 <div class="post-user">
-                    <img src="YASMIN.jpg" class="post-user-img" onerror="this.src='https://via.placeholder.com/40/222/fff'">
+                    <div class="post-user-img-box">
+                        <img src="YASMIN.jpg" class="post-user-img" onerror="this.src='https://via.placeholder.com/40/222/fff'">
+                    </div>
                     <span class="post-username">
-                        yasminrosinha <svg class="verified-badge" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                        yasminrosinha 
+                        <svg class="verified-badge" viewBox="0 0 40 40"><path fill="#0095F6" d="M19.998 3.094 14.638 0l-2.972 5.15H5.432v6.354L0 14.64 3.094 20 0 25.359l5.432 3.137v5.905h5.975L14.638 40l5.36-3.094L25.358 40l3.232-5.6h6.162v-6.01L40 25.359 36.905 20 40 14.641l-5.248-3.03v-6.46h-6.419L25.358 0l-5.36 3.094Z"/><path fill="#FFFFFF" d="M17.135 27.674 9.948 20.31a1.59 1.59 0 0 1 0-2.25l2.25-2.25a1.59 1.59 0 0 1 2.25 0l3.81 3.81 9.49-9.49a1.59 1.59 0 0 1 2.25 0l2.25 2.25a1.59 1.59 0 0 1 0 2.25l-12.86 12.86a1.59 1.59 0 0 1-2.253.184Z"/></svg>
                         <span class="post-time">• 2 h</span>
                     </span>
                 </div>
@@ -214,20 +270,33 @@
                     </div>
                     
                     <h2 class="locked-title">Conteúdo Sensível</h2>
-                    <p class="locked-subtitle">Este vídeo contém material exclusivo para assinantes VIP. Libere seu acesso e meu WhatsApp abaixo.</p>
+                    <p class="locked-subtitle">Este vídeo contém material explícito para assinantes. Libere seu acesso VIP abaixo.</p>
 
-                    <div class="subscribe-form">
-                        <div class="form-group">
-                            <input type="tel" id="whatsapp" placeholder="Seu WhatsApp (DDD) 99999-9999" required maxlength="15" oninput="maskPhone(this)">
+                    <!-- NOVO FORMULÁRIO INTUITIVO -->
+                    <div class="subscribe-form" id="formContainer">
+                        <div class="urgency-badge">
+                            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14h-2v-2h2v2zm0-4h-2V7h2v5z"/></svg>
+                            APENAS 3 VAGAS RESTANTES HOJE
+                        </div>
+                        
+                        <div class="form-group input-wrapper">
+                            <!-- Ícone do WhatsApp -->
+                            <svg class="wpp-icon" viewBox="0 0 24 24"><path d="M12.031 0C5.39 0 0 5.39 0 12.031c0 2.131.554 4.212 1.607 6.046L0 24l6.101-1.601a11.96 11.96 0 0 0 5.93 1.572h.004c6.64 0 12.03-5.391 12.03-12.032C24.065 5.39 18.673 0 12.031 0zm6.591 17.337c-.279.784-1.618 1.498-2.235 1.529-.533.028-1.189.141-3.805-.884-3.155-1.237-5.183-4.444-5.337-4.665-.155-.221-1.274-1.696-1.274-3.238 0-1.542.8-2.302 1.085-2.618.285-.316.621-.395.827-.395.206 0 .412.001.597.011.196.01.458-.077.697.371.248.468.847 2.062.924 2.219.077.157.129.34.025.551-.103.21-.155.342-.31.551-.155.21-.326.464-.464.597-.155.155-.32.32-.144.604.175.284.78 1.27 1.688 2.064 1.171 1.026 2.146 1.341 2.43 1.497.284.156.45.132.617-.044.167-.175.719-.838.913-1.127.194-.289.387-.242.645-.145.258.097 1.636.771 1.916.918.28.146.467.221.535.343.067.122.067.708-.212 1.492z"/></svg>
+                            <input type="tel" id="whatsapp" placeholder="Qual seu WhatsApp? (DDD) 9..." required maxlength="15" oninput="maskPhone(this)">
                         </div>
 
                         <button id="btnFazerDoacao" class="btn-subscribe" onclick="gerarCobrancaPix(event)">
-                            COMPRA APENAS R$25,00
+                            🔓 DESBLOQUEAR AGORA (R$ 25,00)
                         </button>
+                        
+                        <div class="secure-text">
+                            <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+                            Pagamento via PIX 100% seguro.
+                        </div>
 
                         <!-- CONTAINER DO PIX (Inicia oculto) -->
                         <div id="areaPix" class="area-pix-box">
-                            <p style="color:#4ade80; font-weight:700; margin-bottom:10px; font-size: 14px;">PIX GERADO COM SUCESSO!</p>
+                            <p style="color:#4ade80; font-weight:800; margin-bottom:12px; font-size: 14px; text-transform: uppercase;">✅ PIX Gerado com sucesso!</p>
                             <img id="qrCodeImg" src="" alt="QR Code PIX">
                             <input type="text" id="pixCopiaCola" readonly value="">
                             <button class="btn-copy" onclick="copiarPix()">Copiar código PIX</button>
@@ -237,179 +306,185 @@
                 </div>
             </div>
             
-            <!-- AÇÕES DO POST (CURTIR, COMENTAR...) -->
+            <!-- AÇÕES DO POST (INTERATIVOS) -->
             <div class="post-actions-bar">
                 <div class="post-actions-left">
-                    <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                    <!-- Botão Coração -->
+                    <div class="icon-btn" onclick="toggleMainLike(this)">
+                        <svg viewBox="0 0 24 24"><path d="M16.792 3.904A4.989 4.989 0 0 1 21.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-2.143-1.823-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 0 1 4.708-5.218 4.21 4.21 0 0 1 3.675 1.941c.84 1.174.98 1.543 1.117 1.543s.277-.369 1.117-1.543a4.21 4.21 0 0 1 3.675-1.941z" fill="transparent" stroke="currentColor" stroke-width="2"/></svg>
+                    </div>
                     <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
                     <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
                 </div>
-                <svg viewBox="0 0 24 24"><path d="M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2z"/></svg>
+                <!-- Botão Salvar -->
+                <div class="icon-btn" onclick="toggleSave(this)">
+                    <svg viewBox="0 0 24 24"><path d="M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2z" fill="transparent" stroke="currentColor" stroke-width="2"/></svg>
+                </div>
             </div>
 
             <!-- CURTIDAS E LEGENDA -->
             <div class="post-likes">
-                Curtido por <strong>marcos_99</strong> e <strong>outras 18.542 pessoas</strong>
+                <img src="https://i.pravatar.cc/150?img=11" alt="like">
+                Curtido por <strong>marcos_99</strong> e <strong id="likeCount">outras 97.462 pessoas</strong>
             </div>
             
             <div class="post-caption">
-                <strong>yasminrosinha</strong> Destravei o álbum secreto de ontem amor... E pra quem garantir agora, eu chamo no WhatsApp em 5 minutinhos pra mandar um áudio de bônus 🥵🔞
+                <strong>yasminrosinha</strong> <svg class="verified-badge" viewBox="0 0 40 40" style="width:12px;height:12px;"><path fill="#0095F6" d="M19.998 3.094 14.638 0l-2.972 5.15H5.432v6.354L0 14.64 3.094 20 0 25.359l5.432 3.137v5.905h5.975L14.638 40l5.36-3.094L25.358 40l3.232-5.6h6.162v-6.01L40 25.359 36.905 20 40 14.641l-5.248-3.03v-6.46h-6.419L25.358 0l-5.36 3.094Z"/><path fill="#FFFFFF" d="M17.135 27.674 9.948 20.31a1.59 1.59 0 0 1 0-2.25l2.25-2.25a1.59 1.59 0 0 1 2.25 0l3.81 3.81 9.49-9.49a1.59 1.59 0 0 1 2.25 0l2.25 2.25a1.59 1.59 0 0 1 0 2.25l-12.86 12.86a1.59 1.59 0 0 1-2.253.184Z"/></svg> Destravei o álbum secreto pra quem assinar hoje amor... E quem garantir agora, eu chamo no WhatsApp em 5 minutinhos pra mandar um áudio bônus 🥵🔞
             </div>
             
-            <div class="view-comments">
-                Ver todos os 341 comentários
+            <div class="view-comments-info">
+                Ver todos os 2.341 comentários
             </div>
 
-            <!-- COMENTÁRIOS ESTRATÉGICOS COM RESPOSTAS (PROVA SOCIAL MÁXIMA) -->
+            <!-- COMENTÁRIOS ESTRATÉGICOS -->
             <div class="comments-list">
                 
-                <!-- COMENTÁRIO 1 (Com Resposta da Yasmin) -->
-                <div class="comment-item">
-                    <div class="comment-left">
-                        <img src="https://i.pravatar.cc/150?img=11" class="comment-avatar">
-                        <div class="comment-text-area">
-                            <strong>rafael.souza9</strong> Mano do céu, o 3º vídeo que você mandou lá no zap... vale muito mais que 25 conto slc 🔥🥵
-                            <div class="comment-meta">
-                                <span>3 h</span> <span>Responder</span>
+                <!-- THREAD 1 -->
+                <div class="comment-thread">
+                    <div class="comment-item">
+                        <div class="comment-left">
+                            <div class="comment-avatar-box"><img src="https://i.pravatar.cc/150?img=11" class="comment-avatar"></div>
+                            <div class="comment-text-area">
+                                <strong>rafael.souza9</strong> Mano do céu, tem uns 3 vídeos seus novos na cama lá no drive... vale muito mais que 25 conto slc 🔥🥵
+                                <div class="comment-meta">
+                                    <span>3 h</span> <span>Responder</span>
+                                </div>
                             </div>
                         </div>
+                        <div class="comment-like" onclick="toggleCommentLike(this)"><svg viewBox="0 0 24 24"><path d="M16.792 3.904A4.989 4.989 0 0 1 21.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-2.143-1.823-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 0 1 4.708-5.218 4.21 4.21 0 0 1 3.675 1.941c.84 1.174.98 1.543 1.117 1.543s.277-.369 1.117-1.543a4.21 4.21 0 0 1 3.675-1.941z"/></svg></div>
                     </div>
-                    <div class="comment-like"><svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></div>
-                </div>
-                <!-- Resposta 1 -->
-                <div class="comment-reply">
-                    <div class="comment-left">
-                        <img src="YASMIN.jpg" class="reply-avatar" onerror="this.src='https://via.placeholder.com/40/222/fff'">
-                        <div class="comment-text-area">
-                            <strong>yasminrosinha</strong> <span class="mention">@rafael.souza9</span> Fico feliz que tenha gostado amor 😈 Hoje a noite eu libero mais pra vc lá no VIP...
-                            <div class="comment-meta">
-                                <span>2 h</span> <span>Responder</span>
+                    
+                    <div class="replies" style="display: none;">
+                        <div class="comment-reply">
+                            <div class="comment-left">
+                                <div class="reply-avatar-box story"><img src="YASMIN.jpg" class="comment-avatar" onerror="this.src='https://via.placeholder.com/40/222/fff'"></div>
+                                <div class="comment-text-area">
+                                    <strong>yasminrosinha</strong> <span class="mention">@rafael.souza9</span> Fico feliz que tenha gostado amorzinho 😈 Hoje de madrugada eu libero mais um pra vc lá no VIP...
+                                    <div class="comment-meta"><span>2 h</span> <span>Responder</span></div>
+                                </div>
                             </div>
+                            <div class="comment-like" onclick="toggleCommentLike(this)"><svg viewBox="0 0 24 24"><path d="M16.792 3.904A4.989 4.989 0 0 1 21.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-2.143-1.823-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 0 1 4.708-5.218 4.21 4.21 0 0 1 3.675 1.941c.84 1.174.98 1.543 1.117 1.543s.277-.369 1.117-1.543a4.21 4.21 0 0 1 3.675-1.941z"/></svg></div>
                         </div>
                     </div>
-                    <div class="comment-like"><svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></div>
-                </div>
-
-                <!-- COMENTÁRIO 2 (Com interação entre usuários) -->
-                <div class="comment-item" style="margin-top: 10px;">
-                    <div class="comment-left">
-                        <img src="https://i.pravatar.cc/150?img=12" class="comment-avatar">
-                        <div class="comment-text-area">
-                            <strong>diegosantos_ofc</strong> Paguei agr e o bot já liberou o acesso. Tava achando q era golpe, mas recebi tudo certinho, perfeita demais 😍
-                            <div class="comment-meta">
-                                <span>4 h</span> <span>Responder</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="comment-like"><svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></div>
-                </div>
-                <!-- Resposta de outro usuário -->
-                <div class="comment-reply">
-                    <div class="comment-left">
-                        <img src="https://i.pravatar.cc/150?img=33" class="reply-avatar">
-                        <div class="comment-text-area">
-                            <strong>carlos_henriquebr</strong> <span class="mention">@diegosantos_ofc</span> Irmão demora muito pra chegar no zap? fiz o pix agorinha aqui
-                            <div class="comment-meta">
-                                <span>1 h</span> <span>Responder</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="comment-like"><svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></div>
-                </div>
-                <!-- Resposta final da thread -->
-                <div class="comment-reply" style="margin-top: 8px;">
-                    <div class="comment-left">
-                        <img src="https://i.pravatar.cc/150?img=12" class="reply-avatar">
-                        <div class="comment-text-area">
-                            <strong>diegosantos_ofc</strong> <span class="mention">@carlos_henriquebr</span> Cai na hora viado kkkkk assim que o banco aprova o sistema já envia o link automático lá. Pode ficar dboa q ela entrega msm
-                            <div class="comment-meta">
-                                <span>58 min</span> <span>Responder</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="comment-like"><svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></div>
+                    <div class="view-more-replies" onclick="toggleReplies(this)"><div class="line"></div> Ver respostas (1)</div>
                 </div>
 
-                <!-- COMENTÁRIO 3 -->
-                <div class="comment-item" style="margin-top: 10px;">
-                    <div class="comment-left">
-                        <img src="https://i.pravatar.cc/150?img=53" class="comment-avatar">
-                        <div class="comment-text-area">
-                            <strong>thiagoo_99</strong> Aquele áudio que vc mandou hj de manhã me quebrou, pqp 🤤
-                            <div class="comment-meta">
-                                <span>6 h</span> <span>Responder</span>
+                <!-- THREAD 2 -->
+                <div class="comment-thread">
+                    <div class="comment-item">
+                        <div class="comment-left">
+                            <div class="comment-avatar-box"><img src="https://i.pravatar.cc/150?img=12" class="comment-avatar"></div>
+                            <div class="comment-text-area">
+                                <strong>diegosantos_ofc</strong> Paguei agr e o bot já liberou o acesso no zap. Tava achando q era golpe, mas recebi tudo certinho, vc é perfeita demais 😍
+                                <div class="comment-meta">
+                                    <span>4 h</span> <span>Responder</span>
+                                </div>
                             </div>
                         </div>
+                        <div class="comment-like" onclick="toggleCommentLike(this)"><svg viewBox="0 0 24 24"><path d="M16.792 3.904A4.989 4.989 0 0 1 21.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-2.143-1.823-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 0 1 4.708-5.218 4.21 4.21 0 0 1 3.675 1.941c.84 1.174.98 1.543 1.117 1.543s.277-.369 1.117-1.543a4.21 4.21 0 0 1 3.675-1.941z"/></svg></div>
                     </div>
-                    <div class="comment-like"><svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></div>
-                </div>
-                
-                <div class="view-more-replies">Ver respostas (2)</div>
 
-                <!-- COMENTÁRIO 4 (Com resposta da Yasmin) -->
-                <div class="comment-item" style="margin-top: 10px;">
-                    <div class="comment-left">
-                        <img src="https://i.pravatar.cc/150?img=15" class="comment-avatar">
-                        <div class="comment-text-area">
-                            <strong>lucas_mendesbr</strong> Mais barato que um lanche e material nível gringa. O que tem no final do álbum pqp... Comprem que não tem erro!
-                            <div class="comment-meta">
-                                <span>7 h</span> <span>Responder</span>
+                    <div class="replies" style="display: none;">
+                        <div class="comment-reply">
+                            <div class="comment-left">
+                                <div class="reply-avatar-box"><img src="https://i.pravatar.cc/150?img=33" class="comment-avatar"></div>
+                                <div class="comment-text-area">
+                                    <strong>carlos_henriquebr</strong> <span class="mention">@diegosantos_ofc</span> Irmão demora muito pra chegar? fiz o pix agorinha aqui
+                                    <div class="comment-meta"><span>1 h</span> <span>Responder</span></div>
+                                </div>
                             </div>
+                            <div class="comment-like" onclick="toggleCommentLike(this)"><svg viewBox="0 0 24 24"><path d="M16.792 3.904A4.989 4.989 0 0 1 21.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-2.143-1.823-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 0 1 4.708-5.218 4.21 4.21 0 0 1 3.675 1.941c.84 1.174.98 1.543 1.117 1.543s.277-.369 1.117-1.543a4.21 4.21 0 0 1 3.675-1.941z"/></svg></div>
+                        </div>
+                        <div class="comment-reply">
+                            <div class="comment-left">
+                                <div class="reply-avatar-box"><img src="https://i.pravatar.cc/150?img=12" class="comment-avatar"></div>
+                                <div class="comment-text-area">
+                                    <strong>diegosantos_ofc</strong> <span class="mention">@carlos_henriquebr</span> Cai na hora mano kkkkk assim que o banco aprova o sistema já envia o link automático lá. Pode ficar dboa.
+                                    <div class="comment-meta"><span>58 min</span> <span>Responder</span></div>
+                                </div>
+                            </div>
+                            <div class="comment-like" onclick="toggleCommentLike(this)"><svg viewBox="0 0 24 24"><path d="M16.792 3.904A4.989 4.989 0 0 1 21.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-2.143-1.823-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 0 1 4.708-5.218 4.21 4.21 0 0 1 3.675 1.941c.84 1.174.98 1.543 1.117 1.543s.277-.369 1.117-1.543a4.21 4.21 0 0 1 3.675-1.941z"/></svg></div>
                         </div>
                     </div>
-                    <div class="comment-like"><svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></div>
-                </div>
-                <!-- Resposta 4 -->
-                <div class="comment-reply">
-                    <div class="comment-left">
-                        <img src="YASMIN.jpg" class="reply-avatar" onerror="this.src='https://via.placeholder.com/40/222/fff'">
-                        <div class="comment-text-area">
-                            <strong>yasminrosinha</strong> <span class="mention">@lucas_mendesbr</span> Obrigada pela preferência amorzinho ❤️ prometo não decepcionar rs
-                            <div class="comment-meta">
-                                <span>5 h</span> <span>Responder</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="comment-like"><svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></div>
+                    <div class="view-more-replies" onclick="toggleReplies(this)"><div class="line"></div> Ver respostas (2)</div>
                 </div>
 
-                <!-- COMENTÁRIO 5 -->
-                <div class="comment-item" style="margin-top: 10px;">
-                    <div class="comment-left">
-                        <img src="https://i.pravatar.cc/150?img=13" class="comment-avatar">
-                        <div class="comment-text-area">
-                            <strong>marcos_rj</strong> Ela chama no zap de vdd viado, respondeu agora a pouco kkkkkk to maluco
-                            <div class="comment-meta">
-                                <span>10 h</span> <span>Responder</span>
+                <!-- THREAD 3 -->
+                <div class="comment-thread">
+                    <div class="comment-item">
+                        <div class="comment-left">
+                            <div class="comment-avatar-box"><img src="https://i.pravatar.cc/150?img=15" class="comment-avatar"></div>
+                            <div class="comment-text-area">
+                                <strong>lucas_mendesbr</strong> O que tem no pacote de 25 reais exatamente?
+                                <div class="comment-meta">
+                                    <span>7 h</span> <span>Responder</span>
+                                </div>
                             </div>
                         </div>
+                        <div class="comment-like" onclick="toggleCommentLike(this)"><svg viewBox="0 0 24 24"><path d="M16.792 3.904A4.989 4.989 0 0 1 21.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-2.143-1.823-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 0 1 4.708-5.218 4.21 4.21 0 0 1 3.675 1.941c.84 1.174.98 1.543 1.117 1.543s.277-.369 1.117-1.543a4.21 4.21 0 0 1 3.675-1.941z"/></svg></div>
                     </div>
-                    <div class="comment-like"><svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></div>
-                </div>
 
-                <!-- COMENTÁRIO 6 -->
-                <div class="comment-item" style="margin-top: 10px;">
-                    <div class="comment-left">
-                        <img src="https://i.pravatar.cc/150?img=14" class="comment-avatar">
-                        <div class="comment-text-area">
-                            <strong>joao.vitor88</strong> Já paguei o pix, manda lá no zap bb 🔥
-                            <div class="comment-meta">
-                                <span>12 h</span> <span>Responder</span>
+                    <div class="replies" style="display: none;">
+                        <div class="comment-reply">
+                            <div class="comment-left">
+                                <div class="reply-avatar-box story"><img src="YASMIN.jpg" class="comment-avatar" onerror="this.src='https://via.placeholder.com/40/222/fff'"></div>
+                                <div class="comment-text-area">
+                                    <strong>yasminrosinha</strong> <span class="mention">@lucas_mendesbr</span> O álbum completo sem censura do post, acesso a pasta de vídeos da semana e meu WhatsApp pessoal ativado bebê 😉
+                                    <div class="comment-meta"><span>5 h</span> <span>Responder</span></div>
+                                </div>
                             </div>
+                            <div class="comment-like" onclick="toggleCommentLike(this)"><svg viewBox="0 0 24 24"><path d="M16.792 3.904A4.989 4.989 0 0 1 21.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-2.143-1.823-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 0 1 4.708-5.218 4.21 4.21 0 0 1 3.675 1.941c.84 1.174.98 1.543 1.117 1.543s.277-.369 1.117-1.543a4.21 4.21 0 0 1 3.675-1.941z"/></svg></div>
                         </div>
                     </div>
-                    <div class="comment-like"><svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></div>
+                    <div class="view-more-replies" onclick="toggleReplies(this)"><div class="line"></div> Ver respostas (1)</div>
                 </div>
-                
-                <div class="view-more-replies">Ver respostas (1)</div>
-
             </div>
-
+        </div>
+        
+        <!-- BOTTOM NAV (RODAPÉ DO APP) -->
+        <div class="bottom-nav">
+            <svg viewBox="0 0 24 24"><path d="M12 3l10 9h-3v9H5v-9H2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2zm0 15l-5-2.18L7 18V5h10v13z"/></svg>
+            <img src="YASMIN.jpg" class="nav-avatar active" onerror="this.src='https://via.placeholder.com/40/222/fff'">
         </div>
 
     </div>
 
     <script>
+        // FUNÇÕES INTERATIVAS DO INSTAGRAM (CURTIR/SALVAR)
+        function toggleMainLike(element) {
+            element.classList.toggle('liked');
+            const likeCountElem = document.getElementById('likeCount');
+            if(element.classList.contains('liked')) {
+                likeCountElem.innerText = "outras 97.463 pessoas";
+            } else {
+                likeCountElem.innerText = "outras 97.462 pessoas";
+            }
+        }
+
+        function toggleSave(element) {
+            element.classList.toggle('saved');
+        }
+
+        function toggleCommentLike(element) {
+            element.classList.toggle('liked');
+        }
+
+        // EXPANDIR RESPOSTAS DE COMENTÁRIOS
+        function toggleReplies(element) {
+            const repliesDiv = element.previousElementSibling;
+            if(repliesDiv.style.display === 'none') {
+                repliesDiv.style.display = 'flex';
+                element.innerHTML = '<div class="line"></div> Ocultar respostas';
+            } else {
+                repliesDiv.style.display = 'none';
+                const count = repliesDiv.children.length;
+                element.innerHTML = `<div class="line"></div> Ver respostas (${count})`;
+            }
+        }
+
         // MÁSCARA TELEFONE
         function maskPhone(input) {
             let value = input.value.replace(/\D/g, '');
@@ -429,6 +504,7 @@
             const areaPix = document.getElementById('areaPix');
             const inputCopiaCola = document.getElementById('pixCopiaCola');
             const qrCodeImg = document.getElementById('qrCodeImg');
+            const formContainer = document.getElementById('formContainer');
             
             if(zapValue.length < 10) {
                 alert('Por favor, digite seu WhatsApp corretamente com DDD.');
@@ -447,7 +523,6 @@
             botao.style.opacity = "0.7";
 
             try {
-                // Requisição Backend Vercel
                 const resposta = await fetch('/api/pix', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -457,8 +532,12 @@
                 const dados = await resposta.json();
 
                 if (resposta.ok) {
-                    botao.style.display = 'none'; 
-                    zapInput.style.display = 'none'; 
+                    // Esconde tudo do formulário antigo
+                    Array.from(formContainer.children).forEach(child => {
+                        if(child.id !== 'areaPix') child.style.display = 'none';
+                    });
+                    
+                    // Mostra só a área do PIX
                     areaPix.style.display = 'block';
                     
                     if(dados.qrCodeImage) {
@@ -483,12 +562,11 @@
         }
 
         function restaurarBotao(botao) {
-            botao.innerHTML = `COMPRA APENAS R$25,00`;
+            botao.innerHTML = `🔓 DESBLOQUEAR AGORA (R$ 25,00)`;
             botao.style.pointerEvents = "auto";
             botao.style.opacity = "1";
         }
 
-        // COPIAR PIX
         function copiarPix() {
             const copiaCola = document.getElementById('pixCopiaCola');
             copiaCola.select();
