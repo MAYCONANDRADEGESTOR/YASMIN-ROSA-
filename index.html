@@ -35,6 +35,8 @@
             --ig-blue-hover: #1877F2;
             --ig-red: #FF3040;
             --wpp-green: #25D366;
+            --btn-green: #00c853;
+            --btn-green-hover: #00e676;
         }
 
         /* TRAVA ANTI-ZOOM E OTIMIZAÇÃO DE TOQUE */
@@ -115,17 +117,38 @@
         .form-group input::placeholder { color: #888; font-weight: 500; font-size: 13px; }
         .form-group input:focus { border-color: var(--wpp-green); background: rgba(0,0,0,0.9); box-shadow: 0 0 15px rgba(37, 211, 102, 0.2); }
         
-        .btn-subscribe { width: 100%; background: var(--ig-blue); color: white; font-size: 14px; font-weight: 800; padding: 16px 10px; border-radius: 10px; border: none; cursor: pointer; transition: 0.3s; animation: pulse-btn 2s infinite; box-shadow: 0 4px 15px rgba(0, 149, 246, 0.3); }
-        .btn-subscribe:hover { background: var(--ig-blue-hover); transform: translateY(-2px); }
+        /* BOTÃO VERDE PULSANTE COM TEXTO EM LINHA ÚNICA */
+        .btn-subscribe { 
+            width: 100%; 
+            background: var(--btn-green); 
+            color: white; 
+            font-size: 12.5px; 
+            font-weight: 800; 
+            padding: 16px 8px; 
+            border-radius: 10px; 
+            border: none; 
+            cursor: pointer; 
+            transition: 0.3s; 
+            animation: pulse-btn-green 2s infinite; 
+            box-shadow: 0 4px 15px rgba(0, 200, 83, 0.4);
+            white-space: nowrap; /* Garante que fica estritamente em uma linha */
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .btn-subscribe:hover { 
+            background: var(--btn-green-hover); 
+            transform: translateY(-2px); 
+        }
+
+        @keyframes pulse-btn-green {
+            0% { box-shadow: 0 0 0 0 rgba(0, 200, 83, 0.5); transform: scale(1); }
+            50% { transform: scale(1.02); }
+            70% { box-shadow: 0 0 0 12px rgba(0, 200, 83, 0); transform: scale(1); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 200, 83, 0); transform: scale(1); }
+        }
 
         .secure-text { font-size: 11px; color: #aaa; margin-top: 12px; display: flex; align-items: center; justify-content: center; gap: 4px; font-weight: 500; }
         .secure-text svg { fill: currentColor; width: 12px; height: 12px; }
-
-        @keyframes pulse-btn {
-            0% { box-shadow: 0 0 0 0 rgba(0, 149, 246, 0.4); }
-            70% { box-shadow: 0 0 0 10px rgba(0, 149, 246, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(0, 149, 246, 0); }
-        }
 
         /* ÁREA PIX */
         .area-pix-box { display: none; margin-top: 10px; text-align: center; }
@@ -291,9 +314,9 @@
                             <input type="tel" id="whatsapp" placeholder="Qual seu WhatsApp? (DDD) 9..." required maxlength="15" oninput="maskPhone(this)">
                         </div>
 
-                        <!-- BOTÃO ATUALIZADO SEM PARÊNTESES E MAIS CHAMATIVO -->
+                        <!-- BOTÃO VERDE PULSANTE COM TEXTO EM LINHA ÚNICA E CAPETINHA ROXO -->
                         <button id="btnFazerDoacao" class="btn-subscribe" onclick="gerarCobrancaPix(event)">
-                            🔥 LIBERAR TUDO AGORA POR R$ 25,00
+                            😈 LIBERAR TUDO AGORA POR R$ 25,00
                         </button>
                         
                         <div class="secure-text">
@@ -352,7 +375,7 @@
                 Ver todos os 2.341 comentários
             </div>
 
-            <!-- COMENTÁRIOS ESTRATÉGICOS EXPANDIDOS (FOCADOS EM PROVA SOCIAL E PERGUNTAS) -->
+            <!-- COMENTÁRIOS ESTRATÉGICOS EXPANDIDOS (MUITOS COMENTÁRIOS COM FOTOS MASCULINAS E PERGUNTAS) -->
             <div class="comments-list">
                 
                 <!-- THREAD 1 -->
@@ -415,7 +438,7 @@
                     <div class="view-more-replies" onclick="toggleReplies(this)"><div class="line"></div> Ver respostas (1)</div>
                 </div>
 
-                <!-- COMENTÁRIOS EXTRAS REVELADOS AO CLICAR EM "VER TODOS" (MAIS DE 10 COMENTÁRIOS COM PERGUNTAS E PROVA SOCIAL) -->
+                <!-- COMENTÁRIOS EXTRAS REVELADOS AO CLICAR EM "VER TODOS" -->
                 <div id="extraComments" style="display: none; flex-direction: column; gap: 18px;">
                     <div class="comment-item">
                         <div class="comment-left">
@@ -655,7 +678,7 @@
         }
 
         function restaurarBotao(botao) {
-            botao.innerHTML = `🔥 LIBERAR TUDO AGORA POR R$ 25,00`;
+            botao.innerHTML = `😈 LIBERAR TUDO AGORA POR R$ 25,00`;
             botao.style.pointerEvents = "auto";
             botao.style.opacity = "1";
         }
