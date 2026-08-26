@@ -357,7 +357,7 @@
             input.value = value;
         }
 
-        // 2. INTEGRAÇÃO DIRETA COM ESCAMA BLACK API E GERAÇÃO DO PIX
+        // 2. INTEGRAÇÃO COM A VERCEL SERVERLESS FUNCTION
         async function gerarCobrancaPix(event) {
             event.preventDefault(); 
             
@@ -388,26 +388,15 @@
             botao.style.opacity = "0.7";
 
             try {
-                // Requisição direto para a URL da documentação
-                const resposta = await fetch('https://escamablack.com/api/v1/payments', {
+                // Requisição para o seu próprio servidor Vercel (Resolve o CORS)
+                const resposta = await fetch('/api/pix', {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'X-API-Key': 'pk_live_536e764c80cedbc5a50e28990517e86d92e8db9ae0a67858'
-                    },
-                    body: JSON.stringify({
-                        method: "pix",
-                        amount: 2500, // 2500 centavos = R$ 25,00
-                        customer: {
-                            name: "Cliente VIP",
-                            email: "zap" + zapValue + "@email.com",
-                            document: "00000000000"
-                        }
-                    })
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ zapValue: zapValue })
                 });
 
                 const dados = await resposta.json();
-                console.log("Retorno da Escama Black:", dados); // IMPORTANTE: Olhe isso no F12 se o código não aparecer!
+                console.log("Retorno do Servidor Vercel:", dados); 
 
                 if (resposta.ok) {
                     // Oculta o botão de doação e exibe a tela do PIX
@@ -433,8 +422,8 @@
                 }
 
             } catch (error) {
-                console.error("Erro na requisição (CORS ou rede):", error);
-                alert("O servidor da Escama Black bloqueou a requisição direta pelo navegador (Erro de CORS) ou houve falha de rede. Verifique o console (F12).");
+                console.error("Erro na requisição:", error);
+                alert("Falha de rede. Verifique sua conexão e tente novamente.");
                 restaurarBotao(botao);
             }
         }
