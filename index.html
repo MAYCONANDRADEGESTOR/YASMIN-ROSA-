@@ -28,7 +28,7 @@
         :root {
             --bg-page: #000000;
             --bg-card: #151515;
-            --primary: #ff2b5e; /* Cor estilo Privacy */
+            --primary: #ff2b5e; 
             --primary-hover: #e02452;
             --text-main: #ffffff;
             --text-muted: #8e8e8e;
@@ -43,71 +43,85 @@
 
         /* HEADER & COVER */
         .cover-photo { width: 100%; height: 200px; background-image: url('https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center 30%; position: relative; }
-        .cover-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.7)); }
+        .cover-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.8)); }
 
         /* PROFILE DETAILS */
         .profile-header { padding: 0 20px 20px; position: relative; border-bottom: 1px solid var(--border-color); }
         .avatar-container { margin-top: -50px; position: relative; display: inline-block; }
         .avatar-img { width: 100px; height: 100px; border-radius: 50%; border: 4px solid var(--bg-page); object-fit: cover; background: #222; }
-        .status-badge { position: absolute; bottom: 5px; right: 5px; width: 16px; height: 16px; background-color: #10b981; border: 3px solid var(--bg-page); border-radius: 50%; }
+        .status-badge { position: absolute; bottom: 5px; right: 5px; width: 18px; height: 18px; background-color: #10b981; border: 3px solid var(--bg-page); border-radius: 50%; }
 
         .profile-info { margin-top: 10px; }
         .profile-name { font-size: 22px; font-weight: 800; display: flex; align-items: center; gap: 6px; }
         .verified-icon { color: #3b82f6; width: 18px; height: 18px; }
         .profile-handle { color: var(--text-muted); font-size: 14px; margin-top: 2px; }
         
-        .profile-bio { font-size: 14px; color: #ddd; margin-top: 12px; line-height: 1.5; }
+        .profile-bio { font-size: 14px; color: #ddd; margin-top: 14px; line-height: 1.5; }
         
         /* TABS */
         .nav-tabs { display: flex; border-bottom: 1px solid var(--border-color); }
-        .tab { flex: 1; text-align: center; padding: 15px 0; color: var(--text-muted); font-size: 14px; font-weight: 600; cursor: pointer; }
+        .tab { flex: 1; text-align: center; padding: 15px 0; color: var(--text-muted); font-size: 14px; font-weight: 700; cursor: pointer; }
         .tab.active { color: var(--text-main); border-bottom: 2px solid var(--primary); }
+        .tab span { display: block; font-size: 11px; font-weight: 500; color: #666; margin-top: 2px; }
 
         /* FEED POST */
-        .feed-post { border-bottom: 1px solid var(--border-color); padding: 20px 0; background: var(--bg-page); }
-        .post-header { display: flex; align-items: center; gap: 10px; padding: 0 20px; margin-bottom: 12px; }
-        .post-avatar { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; }
+        .feed-post { border-bottom: 1px solid var(--border-color); padding: 20px 0 0; background: var(--bg-page); }
+        .post-header { display: flex; align-items: center; gap: 10px; padding: 0 20px; margin-bottom: 15px; }
+        .post-avatar { width: 42px; height: 42px; border-radius: 50%; object-fit: cover; }
         .post-meta { display: flex; flex-direction: column; }
-        .post-meta strong { font-size: 14px; color: #fff; }
+        .post-meta strong { font-size: 15px; color: #fff; display: flex; align-items: center; gap: 4px; }
         .post-meta span { font-size: 12px; color: var(--text-muted); }
         
-        .post-caption { padding: 0 20px; font-size: 14px; line-height: 1.5; margin-bottom: 12px; }
+        .post-caption { padding: 0 20px; font-size: 14px; line-height: 1.5; margin-bottom: 15px; color: #eaeaea; }
 
         /* LOCKED CONTENT AREA */
-        .locked-media { position: relative; width: 100%; min-height: 380px; background: url('3d85e2cf-9f18-4fc8-b50e-1d83072bf6be.jpg') center/cover; }
-        .blur-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.5); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; text-align: center; }
+        .locked-media { position: relative; width: 100%; min-height: 400px; background: url('3d85e2cf-9f18-4fc8-b50e-1d83072bf6be.jpg') center/cover; }
+        .blur-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; text-align: center; }
         
-        .lock-icon { background: rgba(255, 43, 94, 0.1); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 15px; }
-        .lock-icon svg { fill: var(--primary); width: 28px; height: 28px; }
+        .lock-icon { background: rgba(255, 43, 94, 0.15); width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 15px; box-shadow: 0 0 20px rgba(255, 43, 94, 0.2); }
+        .lock-icon svg { fill: var(--primary); width: 30px; height: 30px; }
 
-        .locked-title { font-size: 18px; font-weight: 800; margin-bottom: 8px; }
-        .locked-subtitle { font-size: 13px; color: #ccc; margin-bottom: 20px; max-width: 250px; }
+        .locked-title { font-size: 18px; font-weight: 800; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .locked-subtitle { font-size: 13px; color: #ccc; margin-bottom: 25px; max-width: 260px; line-height: 1.4; }
 
         /* FORM & BUTTON */
-        .subscribe-form { width: 100%; max-width: 320px; background: var(--bg-card); padding: 20px; border-radius: 12px; border: 1px solid var(--border-color); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .subscribe-form { width: 100%; max-width: 320px; background: var(--bg-card); padding: 20px; border-radius: 12px; border: 1px solid var(--border-color); box-shadow: 0 10px 30px rgba(0,0,0,0.8); }
         
-        .form-group input { width: 100%; padding: 14px; border-radius: 8px; border: 1px solid #333; background: #000; color: #fff; font-size: 14px; outline: none; text-align: center; margin-bottom: 12px; font-weight: 500; transition: border 0.3s; }
+        .form-group input { width: 100%; padding: 15px; border-radius: 8px; border: 1px solid #333; background: #000; color: #fff; font-size: 14px; outline: none; text-align: center; margin-bottom: 15px; font-weight: 600; transition: border 0.3s; }
         .form-group input:focus { border-color: var(--primary); }
 
-        .btn-subscribe { width: 100%; background: var(--primary); color: white; font-size: 14px; font-weight: 800; text-transform: uppercase; padding: 16px 10px; border-radius: 8px; border: none; cursor: pointer; transition: 0.3s; display: flex; justify-content: center; align-items: center; gap: 8px; }
-        .btn-subscribe:hover { background: var(--primary-hover); }
+        .btn-subscribe { width: 100%; background: var(--primary); color: white; font-size: 14px; font-weight: 800; text-transform: uppercase; padding: 16px 10px; border-radius: 8px; border: none; cursor: pointer; transition: 0.3s; display: flex; justify-content: center; align-items: center; gap: 8px; box-shadow: 0 4px 15px rgba(255, 43, 94, 0.4); }
+        .btn-subscribe:hover { background: var(--primary-hover); transform: translateY(-2px); }
 
         /* PIX AREA */
-        .area-pix-box { display: none; background: #000; border: 1px solid var(--primary); border-radius: 8px; padding: 20px; margin-top: 15px; text-align: center; }
-        .area-pix-box h3 { color: var(--primary); font-size: 15px; font-weight: 800; margin-bottom: 8px; }
-        .area-pix-box p { font-size: 12px; color: #aaa; margin-bottom: 15px; }
-        .area-pix-box img { width: 150px; height: 150px; border-radius: 8px; margin: 0 auto 15px; border: 2px solid #222; display: none; }
+        .area-pix-box { display: none; background: #050505; border: 1px solid var(--primary); border-radius: 8px; padding: 20px; margin-top: 15px; text-align: center; }
+        .area-pix-box h3 { color: var(--primary); font-size: 15px; font-weight: 800; margin-bottom: 8px; text-transform: uppercase; }
+        .area-pix-box p { font-size: 12px; color: #aaa; margin-bottom: 15px; line-height: 1.4; }
+        .area-pix-box img { width: 160px; height: 160px; border-radius: 8px; margin: 0 auto 15px; border: 2px solid #222; display: none; }
         .area-pix-box input { width: 100%; padding: 12px; background: #111; color: #10b981; border: 1px dashed #444; border-radius: 6px; font-size: 12px; text-align: center; margin-bottom: 12px; outline: none; }
-        
         .btn-copy { width: 100%; background: #fff; color: #000; padding: 14px; border: none; border-radius: 6px; font-weight: 800; cursor: pointer; }
-        .btn-copy:hover { background: #eee; }
+
+        /* POST ACTIONS & COMMENTS */
+        .post-actions { padding: 15px 20px; display: flex; gap: 20px; border-bottom: 1px solid var(--border-color); font-size: 14px; font-weight: 700; color: #fff; }
+        .post-actions span { display: flex; align-items: center; gap: 6px; cursor: pointer; }
+        
+        .comments-section { padding: 20px; background: var(--bg-page); }
+        .comments-title { font-size: 14px; font-weight: 700; margin-bottom: 15px; color: var(--text-muted); }
+        
+        .comment { display: flex; gap: 12px; margin-bottom: 20px; }
+        .comment:last-child { margin-bottom: 0; }
+        .comment-avatar { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; background: #222; display: flex; align-items: center; justify-content: center; font-weight: 700; color: #fff; font-size: 14px; }
+        .comment-content { flex: 1; background: var(--bg-card); padding: 12px 15px; border-radius: 0 12px 12px 12px; border: 1px solid #1f1f1f; }
+        .comment-name { font-size: 13px; font-weight: 800; color: #fff; margin-bottom: 6px; display: flex; align-items: center; gap: 6px; }
+        .comment-name span { color: var(--text-muted); font-weight: 500; font-size: 11px; }
+        .comment-text { font-size: 13px; color: #ddd; line-height: 1.5; }
 
         /* NOTIFICATIONS */
-        .popup-provas { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%) translateY(100px); background: #111; border: 1px solid var(--border-color); border-radius: 50px; padding: 8px 16px 8px 8px; display: flex; align-items: center; gap: 10px; opacity: 0; transition: all 0.5s ease; z-index: 100; box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+        .popup-provas { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%) translateY(100px); background: #111; border: 1px solid var(--border-color); border-radius: 50px; padding: 8px 16px 8px 8px; display: flex; align-items: center; gap: 10px; opacity: 0; transition: all 0.5s ease; z-index: 100; box-shadow: 0 4px 20px rgba(0,0,0,0.8); }
         .popup-provas.show { transform: translateX(-50%) translateY(0); opacity: 1; }
         .popup-avatar { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: var(--primary); font-size: 14px; }
         .popup-text { font-size: 12px; }
-        .popup-text strong { color: #fff; }
+        .popup-text strong { color: #fff; font-weight: 800; }
         .popup-text span { color: #aaa; }
     </style>
 </head>
@@ -136,16 +150,16 @@
                 <p class="profile-bio">
                     🔞 O lado que o Instagram censura.<br>
                     📸 Fotos diárias e vídeos íntimos sem cortes.<br>
-                    📲 Acesso direto ao meu WhatsApp privado.
+                    📲 Acesso direto ao meu WhatsApp privado para assinantes.
                 </p>
             </div>
         </div>
 
         <!-- ABAS -->
         <div class="nav-tabs">
-            <div class="tab active">42 Publicações</div>
-            <div class="tab">128 Fotos</div>
-            <div class="tab">34 Vídeos</div>
+            <div class="tab active">247<span>Publicações</span></div>
+            <div class="tab">1.2k<span>Fotos</span></div>
+            <div class="tab">385<span>Vídeos</span></div>
         </div>
 
         <!-- FEED -->
@@ -153,14 +167,14 @@
             <div class="post-header">
                 <img src="YASMIN.jpg" class="post-avatar" onerror="this.src='https://via.placeholder.com/40/222/fff'">
                 <div class="post-meta">
-                    <strong>Yasmin Rosinha</strong>
-                    <span>Há 2 horas</span>
+                    <strong>Yasmin Rosinha <svg class="verified-icon" style="width:14px;height:14px;" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></strong>
+                    <span>Ontem às 22:15</span>
                 </div>
             </div>
             
             <div class="post-caption">
-                Pacote VIP liberado! 🔥😈<br>
-                Destrave meu álbum secreto completo + vídeos caseiros e ganhe acesso ao meu WhatsApp pessoal.
+                Pacote VIP atualizado! 🔥😈<br>
+                Destrave meu álbum secreto completo + 3 vídeos novos na cama e ganhe acesso imediato ao meu WhatsApp pessoal. Vem me ver de perto...
             </div>
 
             <!-- ÁREA BLOQUEADA -->
@@ -171,8 +185,8 @@
                         <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6zm9 14H6V10h12v10zm-6-3c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z"/></svg>
                     </div>
                     
-                    <h2 class="locked-title">Conteúdo Exclusivo</h2>
-                    <p class="locked-subtitle">Assine para destravar este post e todas as mídias privadas.</p>
+                    <h2 class="locked-title">Conteúdo Exclusivo (18+)</h2>
+                    <p class="locked-subtitle">Assine para destravar 12 mídias ocultas deste post e receber meu contato.</p>
 
                     <div class="subscribe-form">
                         <div class="form-group">
@@ -187,7 +201,7 @@
                         <!-- CONTAINER DO PIX (Inicia oculto) -->
                         <div id="areaPix" class="area-pix-box">
                             <h3>PIX Gerado!</h3>
-                            <p>Copie o código abaixo e pague no seu app do banco para desbloquear.</p>
+                            <p>Copie o código abaixo e pague no seu app do banco para desbloquear o acesso agora.</p>
                             
                             <img id="qrCodeImg" src="" alt="QR Code PIX">
                             <input type="text" id="pixCopiaCola" readonly value="">
@@ -198,6 +212,50 @@
 
                 </div>
             </div>
+            
+            <!-- INTERAÇÕES -->
+            <div class="post-actions">
+                <span>❤️ 4.8k</span>
+                <span>💬 142</span>
+            </div>
+
+            <!-- COMENTÁRIOS ESTRATÉGICOS -->
+            <div class="comments-section">
+                <div class="comments-title">Comentários em destaque</div>
+                
+                <div class="comment">
+                    <div class="comment-avatar" style="background: #3b82f6;">R</div>
+                    <div class="comment-content">
+                        <div class="comment-name">Rafael Souza <span>• Há 1 hora</span></div>
+                        <div class="comment-text">Mano do céu... o terceiro vídeo que ela mandou no zap é um absurdo! Valeu cada centavo pqp 🥵🔥</div>
+                    </div>
+                </div>
+
+                <div class="comment">
+                    <div class="comment-avatar" style="background: #10b981;">D</div>
+                    <div class="comment-content">
+                        <div class="comment-name">Diego Alves <span>• Há 3 horas</span></div>
+                        <div class="comment-text">Slc, paguei os 25 conto achando que era caô, mas o bot já me chamou na mesma hora com tudo liberado. Perfeita demais!!</div>
+                    </div>
+                </div>
+
+                <div class="comment">
+                    <div class="comment-avatar" style="background: #f59e0b;">M</div>
+                    <div class="comment-content">
+                        <div class="comment-name">Marcos_99 <span>• Há 5 horas</span></div>
+                        <div class="comment-text">Ainda bem que consegui pegar antes de fechar as vagas pro zap. Aquele áudio que vc mandou hj de manhã... 🤤</div>
+                    </div>
+                </div>
+
+                <div class="comment">
+                    <div class="comment-avatar" style="background: #8b5cf6;">J</div>
+                    <div class="comment-content">
+                        <div class="comment-name">João Paulo <span>• Há 12 horas</span></div>
+                        <div class="comment-text">Mais barato que um lanche e recebi um material nível gringa kkkk top demais! Comprem que não tem erro.</div>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
     </div>
@@ -233,7 +291,7 @@
             const qrCodeImg = document.getElementById('qrCodeImg');
             
             if(zapValue.length < 10) {
-                alert('Por favor, digite seu WhatsApp corretamente.');
+                alert('Por favor, digite seu WhatsApp corretamente com DDD.');
                 zapInput.focus();
                 zapInput.style.borderColor = '#ff2b5e';
                 setTimeout(() => zapInput.style.borderColor = '#333', 2000);
@@ -244,7 +302,7 @@
                 fbq('track', 'InitiateCheckout', { value: 25.00, currency: 'BRL' });
             }
 
-            botao.innerHTML = "GERANDO PIX...";
+            botao.innerHTML = "GERANDO PIX SEGURAMENTE...";
             botao.style.pointerEvents = "none";
             botao.style.opacity = "0.7";
 
@@ -296,7 +354,7 @@
             copiaCola.select();
             copiaCola.setSelectionRange(0, 99999);
             navigator.clipboard.writeText(copiaCola.value);
-            alert("Código PIX copiado! Cole no seu aplicativo do banco.");
+            alert("Código PIX copiado! Cole na área 'Pix Copia e Cola' do seu aplicativo do banco.");
         }
 
         // PROVA SOCIAL (Popups)
@@ -323,12 +381,12 @@
             descElem.innerText = item.desc;
 
             popup.classList.add('show');
-            setTimeout(() => { popup.classList.remove('show'); }, 3500);
+            setTimeout(() => { popup.classList.remove('show'); }, 4000);
         }
 
         setTimeout(() => {
             mostrarPopup();
-            setInterval(mostrarPopup, 8000);
+            setInterval(mostrarPopup, 9000);
         }, 3000);
     </script>
 </body>
