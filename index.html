@@ -117,7 +117,6 @@
         .form-group input::placeholder { color: #888; font-weight: 500; font-size: 13px; }
         .form-group input:focus { border-color: var(--wpp-green); background: rgba(0,0,0,0.9); box-shadow: 0 0 15px rgba(37, 211, 102, 0.2); }
         
-        /* BOTÃO VERDE PULSANTE COM TEXTO EM LINHA ÚNICA */
         .btn-subscribe { 
             width: 100%; 
             background: var(--btn-green); 
@@ -131,7 +130,7 @@
             transition: 0.3s; 
             animation: pulse-btn-green 2s infinite; 
             box-shadow: 0 4px 15px rgba(0, 200, 83, 0.4);
-            white-space: nowrap; /* Garante que fica estritamente em uma linha */
+            white-space: nowrap; 
             overflow: hidden;
             text-overflow: ellipsis;
         }
@@ -336,7 +335,7 @@
                 </div>
             </div>
             
-            <!-- AÇÕES DO POST -->
+            <!-- AÇÕES DO POST (BOTÃO DIRECT AGORA COMPARTILHA VIA WHATSAPP) -->
             <div class="post-actions-bar">
                 <div class="post-actions-left">
                     <div class="icon-btn" onclick="toggleMainLike(this)">
@@ -345,7 +344,8 @@
                     <div onclick="focarNoDesbloqueio()">
                         <svg viewBox="0 0 24 24"><path d="M20.656 17.008a9.993 9.993 0 1 0-3.59 3.615L22 22z" fill="none"/></svg>
                     </div>
-                    <div onclick="focarNoDesbloqueio()">
+                    <!-- Botão Direct alterado para disparar o Compartilhamento no WhatsApp -->
+                    <div onclick="compartilharNoWhatsApp()" title="Compartilhar via WhatsApp">
                         <svg viewBox="0 0 24 24"><path d="M22 3L2 13l9 3 3 9L22 3z"/></svg>
                     </div>
                 </div>
@@ -375,7 +375,7 @@
                 Ver todos os 2.341 comentários
             </div>
 
-            <!-- COMENTÁRIOS ESTRATÉGICOS EXPANDIDOS (MUITOS COMENTÁRIOS COM FOTOS MASCULINAS E PERGUNTAS) -->
+            <!-- COMENTÁRIOS ESTRATÉGICOS EXPANDIDOS -->
             <div class="comments-list">
                 
                 <!-- THREAD 1 -->
@@ -549,6 +549,13 @@
     </div>
 
     <script>
+        // FUNÇÃO DE COMPARTILHAMENTO VIA WHATSAPP (BOTÃO DIRECT)
+        function compartilharNoWhatsApp() {
+            const urlAtual = window.location.href;
+            const texto = encodeURIComponent("Olha esse perfil exclusivo da Yasmin Rosinha, vale a pena ver 😈🔥: " + urlAtual);
+            window.open(`https://api.whatsapp.com/send?text=${texto}`, '_blank');
+        }
+
         // FUNÇÃO PARA REVELAR TODOS OS COMENTÁRIOS AO CLICAR NA FRASE
         function revelarTodosComentarios() {
             const extra = document.getElementById('extraComments');
