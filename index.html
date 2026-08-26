@@ -116,17 +116,25 @@
         .post-caption { padding: 0 14px; font-size: 14px; line-height: 1.4; margin-bottom: 8px; }
         .post-caption strong { font-weight: 600; }
         
-        .view-comments { padding: 0 14px; font-size: 14px; color: var(--text-muted); margin-bottom: 12px; cursor: pointer; }
+        .view-comments { padding: 0 14px; font-size: 14px; color: var(--text-muted); margin-bottom: 15px; cursor: pointer; }
 
         /* COMMENTS SECTION */
-        .comments-list { padding: 0 14px 15px; display: flex; flex-direction: column; gap: 14px; }
+        .comments-list { padding: 0 14px 15px; display: flex; flex-direction: column; gap: 16px; }
         .comment-item { display: flex; justify-content: space-between; align-items: flex-start; }
-        .comment-left { display: flex; gap: 12px; }
+        .comment-left { display: flex; gap: 12px; width: 100%; }
         .comment-avatar { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; }
-        .comment-text-area { font-size: 14px; line-height: 1.4; }
+        .comment-text-area { font-size: 14px; line-height: 1.4; flex: 1; padding-right: 15px; }
         .comment-text-area strong { font-weight: 600; margin-right: 4px; }
         .comment-meta { font-size: 12px; color: var(--text-muted); margin-top: 4px; display: flex; gap: 12px; font-weight: 500; }
         .comment-like svg { width: 12px; height: 12px; fill: var(--text-muted); margin-top: 4px; cursor: pointer; }
+        
+        /* REPLIES */
+        .comment-reply { display: flex; justify-content: space-between; align-items: flex-start; margin-top: 12px; margin-left: 44px; }
+        .reply-avatar { width: 24px; height: 24px; border-radius: 50%; object-fit: cover; }
+        .view-more-replies { display: flex; align-items: center; gap: 10px; margin-left: 44px; margin-top: 10px; font-size: 12px; color: var(--text-muted); font-weight: 600; cursor: pointer; }
+        .view-more-replies::before { content: ""; width: 24px; height: 1px; background: #555; }
+        
+        .mention { color: #E0F1FF; }
 
     </style>
 </head>
@@ -252,14 +260,15 @@
                 Ver todos os 341 comentários
             </div>
 
-            <!-- COMENTÁRIOS ESTRATÉGICOS (PROVA SOCIAL) -->
+            <!-- COMENTÁRIOS ESTRATÉGICOS COM RESPOSTAS (PROVA SOCIAL MÁXIMA) -->
             <div class="comments-list">
                 
+                <!-- COMENTÁRIO 1 (Com Resposta da Yasmin) -->
                 <div class="comment-item">
                     <div class="comment-left">
                         <img src="https://i.pravatar.cc/150?img=11" class="comment-avatar">
                         <div class="comment-text-area">
-                            <strong>rafael.souza9</strong> Mano do céu, o 3º vídeo que você mandou lá no zap... vale muito mais que 25 conto slc 🔥
+                            <strong>rafael.souza9</strong> Mano do céu, o 3º vídeo que você mandou lá no zap... vale muito mais que 25 conto slc 🔥🥵
                             <div class="comment-meta">
                                 <span>3 h</span> <span>Responder</span>
                             </div>
@@ -267,8 +276,22 @@
                     </div>
                     <div class="comment-like"><svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></div>
                 </div>
+                <!-- Resposta 1 -->
+                <div class="comment-reply">
+                    <div class="comment-left">
+                        <img src="YASMIN.jpg" class="reply-avatar" onerror="this.src='https://via.placeholder.com/40/222/fff'">
+                        <div class="comment-text-area">
+                            <strong>yasminrosinha</strong> <span class="mention">@rafael.souza9</span> Fico feliz que tenha gostado amor 😈 Hoje a noite eu libero mais pra vc lá no VIP...
+                            <div class="comment-meta">
+                                <span>2 h</span> <span>Responder</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comment-like"><svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></div>
+                </div>
 
-                <div class="comment-item">
+                <!-- COMENTÁRIO 2 (Com interação entre usuários) -->
+                <div class="comment-item" style="margin-top: 10px;">
                     <div class="comment-left">
                         <img src="https://i.pravatar.cc/150?img=12" class="comment-avatar">
                         <div class="comment-text-area">
@@ -280,12 +303,39 @@
                     </div>
                     <div class="comment-like"><svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></div>
                 </div>
+                <!-- Resposta de outro usuário -->
+                <div class="comment-reply">
+                    <div class="comment-left">
+                        <img src="https://i.pravatar.cc/150?img=33" class="reply-avatar">
+                        <div class="comment-text-area">
+                            <strong>carlos_henriquebr</strong> <span class="mention">@diegosantos_ofc</span> Irmão demora muito pra chegar no zap? fiz o pix agorinha aqui
+                            <div class="comment-meta">
+                                <span>1 h</span> <span>Responder</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comment-like"><svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></div>
+                </div>
+                <!-- Resposta final da thread -->
+                <div class="comment-reply" style="margin-top: 8px;">
+                    <div class="comment-left">
+                        <img src="https://i.pravatar.cc/150?img=12" class="reply-avatar">
+                        <div class="comment-text-area">
+                            <strong>diegosantos_ofc</strong> <span class="mention">@carlos_henriquebr</span> Cai na hora viado kkkkk assim que o banco aprova o sistema já envia o link automático lá. Pode ficar dboa q ela entrega msm
+                            <div class="comment-meta">
+                                <span>58 min</span> <span>Responder</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comment-like"><svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></div>
+                </div>
 
-                <div class="comment-item">
+                <!-- COMENTÁRIO 3 -->
+                <div class="comment-item" style="margin-top: 10px;">
                     <div class="comment-left">
                         <img src="https://i.pravatar.cc/150?img=53" class="comment-avatar">
                         <div class="comment-text-area">
-                            <strong>thiagoo_99</strong> Aquele áudio que vc mandou hj de manhã me quebrou 🤤😈
+                            <strong>thiagoo_99</strong> Aquele áudio que vc mandou hj de manhã me quebrou, pqp 🤤
                             <div class="comment-meta">
                                 <span>6 h</span> <span>Responder</span>
                             </div>
@@ -293,12 +343,15 @@
                     </div>
                     <div class="comment-like"><svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></div>
                 </div>
+                
+                <div class="view-more-replies">Ver respostas (2)</div>
 
-                <div class="comment-item">
+                <!-- COMENTÁRIO 4 (Com resposta da Yasmin) -->
+                <div class="comment-item" style="margin-top: 10px;">
                     <div class="comment-left">
                         <img src="https://i.pravatar.cc/150?img=15" class="comment-avatar">
                         <div class="comment-text-area">
-                            <strong>lucas_mendesbr</strong> Mais barato que um lanche e material nível gringa pqp. Comprem que não tem erro, a mulher é uma deusa
+                            <strong>lucas_mendesbr</strong> Mais barato que um lanche e material nível gringa. O que tem no final do álbum pqp... Comprem que não tem erro!
                             <div class="comment-meta">
                                 <span>7 h</span> <span>Responder</span>
                             </div>
@@ -306,21 +359,22 @@
                     </div>
                     <div class="comment-like"><svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></div>
                 </div>
-
-                <div class="comment-item">
+                <!-- Resposta 4 -->
+                <div class="comment-reply">
                     <div class="comment-left">
-                        <img src="https://i.pravatar.cc/150?img=33" class="comment-avatar">
+                        <img src="YASMIN.jpg" class="reply-avatar" onerror="this.src='https://via.placeholder.com/40/222/fff'">
                         <div class="comment-text-area">
-                            <strong>pedrocavalcanti</strong> Apenas comprem. Vcs não vão se arrepender do que tem lá no final do drive hahaha 🍑👀
+                            <strong>yasminrosinha</strong> <span class="mention">@lucas_mendesbr</span> Obrigada pela preferência amorzinho ❤️ prometo não decepcionar rs
                             <div class="comment-meta">
-                                <span>8 h</span> <span>Responder</span>
+                                <span>5 h</span> <span>Responder</span>
                             </div>
                         </div>
                     </div>
                     <div class="comment-like"><svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></div>
                 </div>
-                
-                <div class="comment-item">
+
+                <!-- COMENTÁRIO 5 -->
+                <div class="comment-item" style="margin-top: 10px;">
                     <div class="comment-left">
                         <img src="https://i.pravatar.cc/150?img=13" class="comment-avatar">
                         <div class="comment-text-area">
@@ -333,7 +387,8 @@
                     <div class="comment-like"><svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></div>
                 </div>
 
-                <div class="comment-item">
+                <!-- COMENTÁRIO 6 -->
+                <div class="comment-item" style="margin-top: 10px;">
                     <div class="comment-left">
                         <img src="https://i.pravatar.cc/150?img=14" class="comment-avatar">
                         <div class="comment-text-area">
@@ -345,6 +400,8 @@
                     </div>
                     <div class="comment-like"><svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></div>
                 </div>
+                
+                <div class="view-more-replies">Ver respostas (1)</div>
 
             </div>
 
@@ -376,7 +433,7 @@
             if(zapValue.length < 10) {
                 alert('Por favor, digite seu WhatsApp corretamente com DDD.');
                 zapInput.focus();
-                zapInput.style.borderColor = '#ff2b5e';
+                zapInput.style.borderColor = '#0095F6';
                 setTimeout(() => zapInput.style.borderColor = '#444', 2000);
                 return;
             }
